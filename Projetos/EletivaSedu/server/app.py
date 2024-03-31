@@ -5,7 +5,8 @@ app = Flask(__name__, template_folder=os.path.abspath('Projetos/EletivaSedu/clie
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('main/index.html')
+    titulo = 'Teste da Sucao da segundo quinta'
+    return render_template('main/index.html', Titulo=titulo)
 
 if __name__ == '__main__':
     app.run(debug=True)
