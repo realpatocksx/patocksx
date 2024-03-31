@@ -1,0 +1,120 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0px; 
+    padding: 0px;
+}
+
+body {
+    min-width: 300px;
+    max-width: 100%;
+    background: rgb(180, 255, 189);
+}
+    
+p {
+    font-size: 20px;
+}
+
+.navbar {
+    background-image: linear-gradient(180deg, rgb(46, 192, 44), rgb(50, 122, 64), rgb(22, 88, 20));
+    color: white;
+}
+
+.navbar > h1 {
+    padding-top: 10px;
+    font-size: 35px;
+}
+
+.navbar h1, p {
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.navbar > ul > li {
+    display: inline-block;
+    margin: 5px;
+    font-size: 30px;
+}
+
+main {
+    min-width: 200px;
+    max-width: 100%;
+    background: white;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.574);
+}
+
+img {
+    margin: 2px 0;
+}
+
+main > .dandroids, .irinabloc, .bugdroid {
+    width: 100%;
+}
+
+.bugdroid {
+    width: 60%;
+    display: block;
+    margin: auto;
+}
+
+main > p {
+    font-size: 30px;
+    text-align: justify;
+    text-indent: 1em;
+}
+
+main > h1 {
+    font-size: 45px;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(38, 107, 37);
+}
+
+#h1backg {
+    background-image: linear-gradient(90deg, rgba(39, 172, 68, 0.403), rgba(80, 128, 80, 0.349), white);
+    margin: 10px 0;
+}
+
+section > h1 {
+    font-size: 30px;
+    background-color: rgba(58, 185, 68, 0.787);
+    border-radius: 15px 15px 0px 0px;
+    color: white;
+}
+
+section {
+    text-indent: 1em;
+    background-color: rgba(176, 255, 216, 0.665);
+    border-radius: 15px;
+    box-shadow: 2px 2px 2px rgba(144, 144, 144, 0.83);
+}
+
+section p {
+    font-size: 25px;
+    margin: 5px 15px; 
+    text-align: justify;
+}
+
+section > span {
+    font-size: 25px;
+    display: inline-block;
+    margin-left: 50px;
+}
+
+footer {
+    width: 100%;
+    background-color: rgb(86, 86, 86);
+    margin-top: 20px; 
+    padding-top: 20px;
+}
+
+footer > p {
+    color: white;
+    font-size: 25px;
+    text-align: center;
+}

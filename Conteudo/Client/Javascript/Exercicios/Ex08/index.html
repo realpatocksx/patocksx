@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title> Ex08 </title>
+</head>
+<body>
+    <h1> Somando valores </h1>
+    <section>
+        <form id="formulario" method="get">
+            <label for="number1"> Numero:   </label> 
+            <input type="number" id="number1">
+            <p> + </p>
+            <label for="number2"> Numero:   </label>
+            <input type="number" id="number2"> <br>
+            <p id="resultado"> Resultado aqui</p>
+            <button id="botao" type="button" onclick="somar()"> Somar </button>
+        </form>
+    </section>
+
+    <script>
+        function somar() {
+            let num1 = parseFloat(document.getElementById('number1').value);
+            let num2 = parseFloat(document.getElementById('number2').value);
+
+            let resultado = num1 + num2;
+
+            document.getElementById('resultado').innerText = `Resultado: ${resultado}`;
+        }
+    </script>
+</body>
+</html>

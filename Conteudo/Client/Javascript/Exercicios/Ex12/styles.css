@@ -1,0 +1,79 @@
+:root {
+    --corbody: rgba(197, 151, 64, 0.736);
+    --corsection: rgb(244, 244, 244);
+    --tamanhoparagraf: 20px;
+    --boxsha: 3px 3px 3px rgba(0, 0, 0, 0.504);
+}
+
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: var(--corbody);
+}
+
+section {
+    max-width: 100%;
+    background-color: var(--corsection);
+    width: 50%;
+    padding: 15px 15px;
+    margin: auto;
+    box-shadow: var(--boxsha);
+    border-radius: 10px;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 100%;
+    padding: 5px 0;
+    display: block;
+    margin: auto;
+    padding: 5px 0;
+}
+
+h1, #p2 {
+    text-align: center;
+    padding: 5px 0;
+}
+
+p {
+    font-size: var(--tamanhoparagraf);
+}
+
+section > label, input, button, p {
+    margin: 10px 0;
+} 
+
+label, button {
+    font-size: 22px;
+}
+
+input{
+    font-size: 20px;
+}
+
+input[type="date"] {
+    width: 200px;
+}
+
+input[type="button"] {
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.573);
+    background-color: rgba(255, 255, 255, 0.452);
+}
+
+
+input[type="button"]:hover {
+    background-color: rgba(177, 177, 177, 0.672);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.509);
+}
+
+#genero {
+    text-align: center;
+}

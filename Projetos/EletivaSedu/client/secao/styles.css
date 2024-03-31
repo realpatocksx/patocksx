@@ -1,0 +1,126 @@
+:root {
+    --corazulclaro2: rgb(0, 140, 255);
+    --corazulclaro: rgb(0, 190, 247);
+    --corcinzar: rgb(94, 94, 94);
+    --corcinzarescuro: rgb(71, 71, 71);
+    --corcinzarclaro: rgb(133, 133, 133);
+    --corbranco: #ffffff;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0%;
+    padding: 0%;
+}
+
+body {
+    background-color: blueviolet;
+}
+
+.navbar {
+    background: var(--corazulclaro2)
+}
+
+.logo {
+    display: block;
+    margin: auto;
+    width: 250px;
+    padding: 10px 0;
+}
+
+.main {
+    background: red;
+}
+
+
+.card {
+    width: 92%;
+    height: 1720px;
+    margin: 15px auto;
+    background-color: aliceblue;
+    padding: 10px;
+}
+
+.capa {
+    width: 100%;
+    
+}
+
+footer {
+    width: 100%;
+    background-color: rgb(101, 101, 101);
+    padding: 20px 0;
+    text-align: center;
+    font-size: 35px;
+    color: var(--corbranco);
+    margin-top: auto;
+}
+
+@media (mix-width: 1080px) {
+    .main {
+        background: rgb(255, 132, 0);
+    }
+}
+
+@media (max-width: 1079.99px) {
+    .logo {
+        width: 300px;
+    }
+
+    .main {
+        background: rgb(123, 255, 0);
+        height: 1720px;
+    }
+
+    .card {
+        height: 1685px;
+    }
+
+    .capa {
+        height: 485px;
+    }
+
+    footer {
+        padding: 25px 0;
+        font-size: 45px;
+    }
+}
+
+@media (max-width: 789.99px) {
+    .main {
+        background: rgb(0, 0, 0);
+        height: 1090px;
+    }
+
+    .logo {
+        width: 235px;
+    }
+
+    .card {
+        height: 1050px;
+    }
+
+    .capa {
+        height: 370px;
+    }
+
+    footer { 
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 570px) {
+    .main {
+        background: rgb(255, 221, 0);
+    }
+
+    .logo {
+        width: 200px;
+    }
+
+    footer {
+        font-size: 15px;
+    }
+}

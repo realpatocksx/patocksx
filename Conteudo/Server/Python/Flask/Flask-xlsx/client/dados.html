@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dados de Inscrição</title>
+</head>
+<body>
+    <h1>Dados de Inscrição</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Telefone</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for inscricao in inscricoes %}
+            <tr>
+                <td>{{ inscricao['nome'] }}</td>
+                <td>{{ inscricao['email'] }}</td>
+                <td>{{ inscricao['telefone'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

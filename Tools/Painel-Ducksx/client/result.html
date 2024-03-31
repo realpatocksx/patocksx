@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
+    <link rel="stylesheet" href="../static/result.css">
+    <link rel="stylesheet" href="result.css">
+    <title>Painel Ducksx</title>
+</head>
+<body>
+    <h1>Resultados Painel Patocksx</h1>
+    <div class="resultados">
+        {% for item in data %}
+            <p>NOME: {{ item['nome'] }}</p>
+            <p>CPF: {{ item['cpf'] }}</p>
+            <p>IDADE: {{ item['idade'] }}</p>
+            <p>NOME-MAE: {{ item['nomeMae'] }}</p>
+            <hr>
+        {% endfor %}
+    </div>
+</body>
+</html>

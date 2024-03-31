@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='resultcpf.css') }}">
+    <link rel="stylesheet" href="../static/resultcpf.css">
+    <link rel="stylesheet" href="resultcpf.css">
+    <title> Painel Patocksx </title>
+</head>
+<body>
+    <div class="container">
+        <h1>Resultado da Pesquisa</h1>
+        <h2>Dados Principais:</h2>
+        <ul class="result-list">
+            {% for key, value in data.items() %}
+                <li><strong>{{ key }}:</strong> {{ value }}</li>
+            {% endfor %}
+        </ul>
+        {% if enderecos %}
+            <h2>Endereços:</h2>
+            <ul class="result-list">
+                {% for endereco in enderecos %}
+                    <li>{{ endereco }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% if emails %}
+            <h2>Emails:</h2>
+            <ul class="result-list">
+                {% for email in emails %}
+                    <li>{{ email }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% if telefones %}
+            <h2>Telefones:</h2>
+            <ul class="result-list">
+                {% for telefone in telefones %}
+                    <li>{{ telefone }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</body>
+</html>

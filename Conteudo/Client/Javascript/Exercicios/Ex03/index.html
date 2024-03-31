@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ex01</title>
+</head>
+<body>
+    <h1>Bem Vindo</h1>
+    <p>Hello World</p>
+    <script>
+        /*
+        var n1 = prompt('Informe um número: ');
+        var n2 = prompt('Informe um número: ');
+        var soma = n1 + n2 
+        alert('a soma entre ' + n1 + ' e ' + n2 + ' é ' + soma);
+
+        irá printar 55, isso acontece pois ele não está somando e sim,
+        fazendo uma concatenação pois o prompt está como string, tem que passa 
+        ela como um float, int, ou number.
+        */
+
+        /*
+        var n1 = parseInt(prompt('Informe um número: '));
+        var n2 = parseInt(prompt('Informe um número: '));
+        var soma = n1 + n2;
+
+        alert(`A soma entre ${n1} e ${n2} é ${soma}`);
+
+
+        nesse caso ser a pessoa usa-se ponto flutuante deria um erro pois o prompt
+        foi definido como inteiro, poderia trocar o int por float mas no caso temos 
+        o number que serve para o javascript identificar qual é o tipo.
+        */
+
+        var n1 = Number(prompt('Informe um número: '));
+        var n2 = Number(prompt('Informe um número: '));
+        var soma = n1 + n2;
+
+        alert(`A soma entre ${n1} e ${n2} é ${soma}`);
+
+        document.write(` <p> A soma entre <strong>${n1}</strong> mais <strong>${n2}</strong> é <strong>${soma}</strong> </p>`)
+    </script>
+</body>
+</html>
