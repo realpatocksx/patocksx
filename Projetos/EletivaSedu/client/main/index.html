@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='imagens/favicon.ico') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ url_for('static', filename='main/styles.css') }}">
     <title>EEEFM Catharina Chequer</title>
 </head>
@@ -20,7 +21,7 @@
             <h2> {{ Titulo }} </h2>
             <p>Descrição <br>ex architecto, ipsum similique voluptas veritahenrique Pedrocastro sequi veniam corrupti vero rem quia unde? Explicabo pariatur ipsum consectetur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio incidunt, recusandae impedit eligendi magni facilis, explicabo velit excepturi, perspiciatis asperiores enim sit id fuga laboriosam sint labore facere quod. Voluptatem.</p>
             <div class="button-container">
-                <button class="acessar" type="button">Acessar</button>
+                <button name="acessar" id="acessar" class="acessar" type="button">Acessar</button>
             </div>
         </section>
 
@@ -64,15 +65,5 @@
     <footer>
         <p> DESENVOLVIDOR POR PHZNNKS/PATOCKSX </p>
     </footer>
-
-    <script>
-        const botoesAcessar = document.querySelectorAll('.acessar');
-
-        botoesAcessar.forEach(botao => {
-            botao.addEventListener('click', () => {
-                window.location.href = '{{ url_for("static", filename="secao/index.html") }}';
-            });
-        });
-    </script>
 </body>
 </html>
