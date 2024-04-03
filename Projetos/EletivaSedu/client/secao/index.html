@@ -19,18 +19,14 @@
     <main class="main">
         <section class="card">
             <img class="capa" src="{{ url_for('static', filename='imagens/capa.jpeg') }}" alt="Imagem da eletiva">
-            <h2>Titulo</h2>
-            <p> Descrição exr architecto, ipsum similique voluptas veritahenrique Pedrocastro sequi veniam corrupti vero rem quia unde? Explicabo pariatur ipsum consectetur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio incidunt, recusandae impedit eligendi magni facilis, explicabo velit excepturi, perspiciatis asperiores enim sit id fuga laboriosam sint labore facere quod. exr architecto, ipsum similique voluptas veritahenrique Pedrocastro sequi veniam corrupti v exr architecto, ipsum similique voluptas veritahenrique Pedrocastro sequi veniam corrupti v Voluptatem.</p>
-
+            <h2> Titulo </h2>
+            <p> Descrição exr architecto, ipsum similique voluptas veritahenrique Pedrocastro sequi veniam corrupti vero rem quia unde? Explicabo pariatur ipsum consectetur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio incidunt, recusandae impedit eligendi magni facilis, explicabo velit excepturi, perspiciatis asperiores enim sit id fuga laboriosam sint labore facere quod. exr architecto, ipsum similique voluptas veritahenrique Pedrocastro sequi veniam corrupti v exr architecto, ipsum similique voluptas veritahenrique Pedrocastro sequi veniam corrupti v Voluptatem fajhjgsddga abgbgjdhsa auyugd lorem e o carai e pai e picar toma cu fila seu fela.</p> <br>
             <div class="container-video">
-                <iframe width="100%" height="315" src="https://www.youtube.com/embed/seu-video-aqui" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="100%" height="365" src="https://www.youtube.com/embed/seu-video-aqui" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
-
-            <div class="container-pdf"></div>
-            
             <div class="button-container">
-                <button id="acessar" class="acessar" type="button" onclick="mostrarFormulario()">Acessar</button>
-            </div>
+                <button id="acessar" class="acessar" type="button" onclick="mostrarFormulario()">Inscreve-se</button>
+            </div> <br>
 
             <div id="formulario" style="display: none;">
                 <form method="POST">
@@ -42,7 +38,9 @@
                         <option value="tarde">Tarde</option>
                         <option value="noite">Noite</option>
                     </select><br><br>
-                    <button class="enviar" type="submit">Enviar</button>
+                    <div class="button-container">
+                        <button class="enviar" type="submit">Enviar</button><br>
+                    </div>
                 </form>
             </div>
         </section>
@@ -54,9 +52,9 @@
 
     <script>
         function mostrarFormulario() {
+            document.querySelector('.acessar').style.display = "none";
             document.getElementById("formulario").style.display = "block";
-            documnent.getElementById("acessar").style.visibility = "hidden";
         }
     </script>
 </body>
-</html>
+</html> 

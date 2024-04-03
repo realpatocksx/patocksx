@@ -55,7 +55,6 @@ body {
     /* Position Relative Para Deixa o Botao Fixo. */
     position: relative;
     /* Config de Altura/Comprimento dos Cards. */
-    width: calc(100% - 10px);
     max-width: 400px;
     min-height: 635px;
     /* Propriedades Amais Para Deixa o Card Gostoso. */
@@ -102,11 +101,7 @@ Passar o Mouse Por Cima Fazer Uma Transicao/Animacao */
 .button-container {
     display: none;
     text-align: center;
-    position: absolute;
-    bottom: 35px;
     left: 50%;
-    transform: translateX(-50%);
-    margin-top: auto;
 }
 
 /* Config Para Desabilitar as Animaçoes do Card. */
@@ -133,6 +128,11 @@ button:hover {
     box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.41);
 }
 
+/* Espaçamento Para Baixo Do Video*/
+.container-video {
+    padding-bottom: 20px;
+}
+
 /* Config do Footer. */
 footer {
     background-color: var(--cinzarescuro);
@@ -153,9 +153,8 @@ footer {
     }
 
     .card {
-        width: calc(33.33% - 22px);
-        max-width: none;
-        min-height: 635px;
+        max-width: 660px;
+        min-height: 825px;
     }
 
     footer {
@@ -170,33 +169,36 @@ footer {
         width: 420px;
     }
 
+    .main {
+        margin-bottom: 20px;
+    }
+
     .card {
-        width: calc(100% - 20px);
-        max-width: none;
-        height: 1400px;
-        border-radius: 25px;
+        max-width: 90%;
     }
 
     .capa {
-        height: 520px;
+        width: 100%;
+        height: 450px;
     }
 
     .card>h2 {
-        font-size: 70px;
+        font-size: 62px;
     }
 
     .card>p {
-        font-size: 45px;
+        font-size: 37px;
     }
 
     button {
-        padding: 30px 45px;
-        font-size: 45px;
-        border-radius: 75px;
+        padding: 27px 37px;
+        font-size: 37px;
+        border-radius: 100px
     }
 
     footer {
-        font-size: 35px;
+        padding: 35px 0;
+        font-size: 45px;
     }
 }
 
@@ -208,13 +210,12 @@ footer {
     }
 
     .card {
-        width: calc(100% - 20px);
         max-width: 100%;
         min-height: 850px;
     }
 
     .card>h2 {
-        font-size: 35px;
+        font-size: 42px;
     } 
 
     .card>p {
@@ -222,8 +223,8 @@ footer {
     }
 
     button {
-        padding: 20px 40px;
-        font-size: 25px;
+        padding: 15px 30px;
+        font-size: 20px;
         border-radius: 75px;
     }
 
