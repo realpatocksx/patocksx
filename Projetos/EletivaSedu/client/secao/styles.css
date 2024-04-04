@@ -157,6 +157,18 @@ footer {
         min-height: 825px;
     }
 
+    .capa {
+        height: 500px;
+    }
+
+    .card>h2 {
+        font-size: 42px;
+    }
+
+    .card>p {
+        font-size: 25px;
+    } 
+
     footer {
         font-size: 35px;
     }
