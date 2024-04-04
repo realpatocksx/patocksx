@@ -29,17 +29,17 @@
             </div> <br>
 
             <div id="formulario" style="display: none;">
-                <form method="POST">
-                    <label for="nome">Nome Completo:</label><br>
-                    <input type="text" id="nome" name="nome"><br>
-                    <label for="turno">Turno:</label><br>
-                    <select id="turno" name="turno">
+                <form method="POST" class="formulario">
+                    <label for="nome" class="label">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" class="input-text">
+                    <label for="turno" class="label">Escolha Seu Turno:</label>
+                    <select id="turno" name="turno" class="select-text">
                         <option value="dia">Dia</option>
                         <option value="tarde">Tarde</option>
                         <option value="noite">Noite</option>
-                    </select><br><br>
+                    </select> <br>
                     <div class="button-container">
-                        <button class="enviar" type="submit">Enviar</button><br>
+                        <button class="enviar" type="submit">Enviar Dados</button><br>
                     </div>
                 </form>
             </div>
