@@ -8,7 +8,7 @@ titulo2 = 'Vai Toma no Seu'
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('secao/index.html', Titulo=titulo, Titulo2=titulo2)
+    return render_template('main/index.html', Titulo=titulo, Titulo2=titulo2)
 
 @app.route('/secao/index.html')
 def secao():
