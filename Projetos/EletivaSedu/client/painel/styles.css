@@ -1,3 +1,4 @@
+/* Variáveis Globais. */
 :root {
     --azulclaro: rgb(70, 190, 255);
     --azulescuro: rgb(0, 102, 255);
@@ -72,27 +73,15 @@ Passar o Mouse Por Cima Fazer Uma Transicao/Animacao */
     box-shadow: 15px 17px 15px rgba(0, 0, 0, 0.362);
 }
 
-/* Config do Titulo. */
-.card > h1 {
-    margin-bottom: 10px;
-    font-size: 30px;
-    text-align: center;
-    color: var(--azulescuro);
-}
-
-/* Config do Paragrafo. */
-.card > p {
-    font-size: 18px;
-    margin-bottom: 10px;
-    text-align: justify;
-}
-
 /* Config da Posisao Onde o Botao Vai Ficar Fixo. */
 .button-container {
     display: none;
     text-align: center;
+    position: absolute;
+    bottom: 35px;
     left: 50%;
-    top: 50%;
+    transform: translateX(-50%);
+    margin-top: auto;
 }
 
 /* Config Para Desabilitar as Animaçoes do Card. */
@@ -105,7 +94,7 @@ button {
     padding: 12px 20px;
     border-radius: 25px;
     font-size: 18px;
-    background-color: var(--azulescuro2);
+    background-color: #4CAF50;
     border: none;
     color: var(--branco);
     box-shadow: 4px 6px 8px rgba(54, 54, 54, 0.551);
@@ -128,4 +117,108 @@ footer {
     color: var(--branco);
     /*  Para Deixa o Footer no Final do Site. */
     margin-top: auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+input[type="text"], input[type="number"], input[type="url"], textarea {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type="file"] {
+    margin-bottom: 10px;
+}
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+
+
+/*   Media Query   */
+/* Para Telas de 1200px Para Cima. */
+/* Computadores/Notebooks */
+@media (min-width: 1200px) {
+    .logo {
+        width: 335px;
+    }
+
+    .card {
+        max-width: 660px;
+        min-height: 825px;
+    }
+
+    footer {
+        font-size: 35px;
+    }
+}
+
+/* Telas Entre 800px a 1199.99px. */
+/* Telas de Celulares Maiores/Tablet */
+@media (min-width: 800px) and (max-width: 1199.99px) {
+    .logo {
+        width: 420px;
+    }
+
+    .main {
+        margin-bottom: 20px;
+    }
+
+    .card {
+        max-width: 100%;
+    }
+
+    button {
+        padding: 27px 37px;
+        font-size: 37px;
+        border-radius: 100px;
+    }
+
+    footer {
+        padding: 35px 0;
+        font-size: 45px;
+    }
+}
+
+/* Para Telas de no Maximo 799.99px. */
+/* Celulares de Porte Medio. */
+@media (max-width: 799.99px) {
+    .logo {
+        width: 320px;
+    }
+
+    .card {
+        min-width: 100%;
+    }
+
+    button {
+        padding: 16px 22px;
+        font-size: 25px;
+        border-radius: 100px;
+    }
+
+    footer {
+        font-size: 24px;
+    }
+}
+
+/* Para Telas de no Maximo 490px. */
+/* Celulares de Porte Pequeno. */
+@media (max-width: 490px) {
+    .logo {
+        width: 210px;
+    }
+
+    footer {
+        font-size: 18px;
+    }
 }

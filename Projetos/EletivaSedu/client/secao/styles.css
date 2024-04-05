@@ -305,25 +305,3 @@ footer {
         font-size: 18px;
     }
 }
-
-
-/*
-Para centralizar o formulário e os elementos dentro dele, você pode adicionar algumas propriedades CSS ao seu código. Aqui está um exemplo de como você poderia modificar o seu código HTML e CSS para alcançar isso:
-
-Adicione as seguintes classes ao seu código HTML:
-
-```html
-<div class="form-container">
-    <form method="POST" class="formulario">
-        <label for="nome" class="input-label">Nome Completo:</label>
-        <input type="text" id="nome" name="nome" class="input-text">
-        <label for="turno" class="input-label">Turno:</label>
-        <select id="turno" name="turno" class="select-text">
-            <option value="dia">Dia</option>
-            <option value="tarde">Tarde</option>
-            <option value="noite">Noite</option>
-        </select>
-        <button type="submit" class="enviar-button">Enviar</button>
-    </form>
-</div>
-*/

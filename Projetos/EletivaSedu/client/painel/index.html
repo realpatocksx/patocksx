@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,43 +7,49 @@
     <link rel="shortcut icon" href="{{ url_for('static', filename='imagens/favicon.ico') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ url_for('static', filename='painel/styles.css') }}">
     <link rel="stylesheet" href="styles.css">
-    <title>Cadastros das Eletivas</title>
+    <title>Cadastro de Eletiva</title>
 </head>
 <body>
     <header>
         <nav class="navbar">
-            <img class="logo" src="{{ url_for('static', filename='imagens/logo.png') }}" alt="Imagem da Eletiva">
+            <img class="logo" src="{{ url_for('static', filename='imagens/logo.png') }}"  alt="Imagem da Eletiva">
         </nav>
     </header>
-    
+
     <main class="main">
         <section class="card">
-            <h1>Cadastro de Notícia</h1>
-            <form method="post">
+            <h1>Cadastro de Eletiva</h1>
+            <form action="main/index.html" method="post">
                 <label for="titulo">Título:</label>
-                <input type="text" id="titulo"> <br>
-
+                <input type="text" id="titulo" name="titulo" required>
+        
                 <label for="descricao">Descrição:</label>
-                <textarea id="descricao"></textarea> <br>
-
+                <textarea id="descricao" name="descricao" rows="2" cols="50" required></textarea>
+        
                 <label for="imagem">Imagem:</label>
-                <input type="file" id="imagem"> <br>
-
-                <label for="url-video">URL do Vídeo do YouTube:</label>
-                <input type="url" name="" id="url"> <br>
-                
-                <label for="max_inscricao">Maximo Inscrição:</label>
-                <input type="number" name="" id="max_inscricao"> <br>
-
+                <input type="file" id="imagem" name="imagem" accept="image/*" required>
+        
+                <label for="video">URL do Vídeo:</label>
+                <input type="url" id="video" name="video" required>
+        
+                <label for="max-inscricao">Máximo de Inscrições:</label>
+                <input type="number" id="max-inscricao" name="max-inscricao" min="5" max="70" required>
+        
+                <label for="apresentar-video">Mostrar o Video:</label>
+                <input type="radio" id="sim" name="apresentar-video" value="sim" required>
+                <label for="sim">Sim</label>
+                <input type="radio" id="nao" name="apresentar-video" value="nao">
+                <label for="nao">Não</label>
+        
                 <div class="button-container">
-                    <button class="enviar" type="submit">Enviar Dados</button><br>
+                    <button class="Cadastrar" type="submit">Cadastrar</button>
                 </div>
             </form>
         </section>
     </main>
 
-     <footer>
-        <p>DESENVOLVIDOR POR PHZNNKS</p>
+    <footer>
+        <p>DESENVOLVIDOR POR DUCKSX/PHZNNKS</p>
     </footer>
 </body>
 </html>
