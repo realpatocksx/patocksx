@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='imagens/favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='painel/styles.css') }}">
+    <link rel="stylesheet" href="styles.css">
+    <title>Cadastros das Eletivas</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <img class="logo" src="{{ url_for('static', filename='imagens/logo.png') }}" alt="Imagem da Eletiva">
+        </nav>
+    </header>
+    
+    <main class="main">
+        <section class="card">
+            <h1>Cadastro de Notícia</h1>
+            <form method="post">
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo"> <br>
+
+                <label for="descricao">Descrição:</label>
+                <textarea id="descricao"></textarea> <br>
+
+                <label for="imagem">Imagem:</label>
+                <input type="file" id="imagem"> <br>
+
+                <label for="url-video">URL do Vídeo do YouTube:</label>
+                <input type="url" name="" id="url"> <br>
+                
+                <label for="max_inscricao">Maximo Inscrição:</label>
+                <input type="number" name="" id="max_inscricao"> <br>
+
+                <div class="button-container">
+                    <button class="enviar" type="submit">Enviar Dados</button><br>
+                </div>
+            </form>
+        </section>
+    </main>
+
+     <footer>
+        <p>DESENVOLVIDOR POR PHZNNKS</p>
+    </footer>
+</body>
+</html>
