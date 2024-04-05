@@ -263,14 +263,14 @@ footer {
 /* Para Telas de no Maximo 799.99px. */
 /* Celulares de Porte Medio. */
 @media (max-width: 799.99px) {
-    .capa {
-        height: 360px;
-    }
-
     .card {
         min-width: 100%;
     }
 
+    .capa {
+        height: 360px;
+    }
+    
     .card>h2 {
         font-size: 42px;
     } 
