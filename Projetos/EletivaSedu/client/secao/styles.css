@@ -217,12 +217,12 @@ footer {
     }
 
     .card {
-        max-width: 90%;
+        max-width: 100%;
     }
 
     .capa {
         width: 100%;
-        height: 450px;
+        height: 560px;
     }
 
     .card>h2 {
@@ -236,7 +236,22 @@ footer {
     button {
         padding: 27px 37px;
         font-size: 37px;
-        border-radius: 100px
+        border-radius: 100px;
+    }
+
+    .label, .select-text {
+        font-size: 42px;
+    }
+
+    .input-text {
+        width: 90%;
+        height: 35px;
+        font-size: 40px;
+    }
+    
+    .select-text {
+        width: 30%;
+        height: 50px;
     }
 
     footer {
@@ -253,8 +268,7 @@ footer {
     }
 
     .card {
-        max-width: 100%;
-        min-height: 850px;
+        min-width: 100%;
     }
 
     .card>h2 {
@@ -266,9 +280,9 @@ footer {
     }
 
     button {
-        padding: 15px 30px;
-        font-size: 20px;
-        border-radius: 75px;
+        padding: 16px 22px;
+        font-size: 25px;
+        border-radius: 100px;
     }
 
     footer {
