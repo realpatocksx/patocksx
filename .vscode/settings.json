@@ -11,5 +11,5 @@
     "python.testing.pytestArgs": [
         "Server-Side"
     ],
-    "liveServer.settings.port": 5523
+    "liveServer.settings.port": 5526
 }

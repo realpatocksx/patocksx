@@ -109,7 +109,7 @@ Passar o Mouse Por Cima Fazer Uma Transicao/Animacao */
     margin-top: auto;
 }
 
-/* Config Para Desabilitar as Animaçoes do Card. */
+/* Config Para aprace o botao */
 .card:hover .button-container, .card:active .button-container {
     display: block;
 }
