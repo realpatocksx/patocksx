@@ -133,6 +133,12 @@ button:hover {
     box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.41);
 }
 
+/*Ocultar Cards*/
+/*
+section {
+    display: none;
+}*/
+
 /* Config do Footer. */
 footer {
     background-color: var(--cinzarescuro);
