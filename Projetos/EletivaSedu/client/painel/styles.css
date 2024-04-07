@@ -27,74 +27,78 @@ body {
     min-height: 100vh;
 }
 
-/* Navbar do Site. */
-.navbar {
+/* Cor do header */
+header {
     background-color: var(--azulclaro);
+}
+
+/* Centralizacao da Logo */
+.logo {
+    width: 325px;
+    display: block;
+    margin: auto;
     padding: 15px 0;
 }
 
-/* Config Para Deixa a Logo da Navbar no Centro do header. */
-.logo {
-    width: 235px;
-    display: block;
-    margin: auto;
-}
-
-/* Area Principal do Meu Site. */
+/* Espaçamento do Card com o Main*/
 .main {
-    background-color: var(--cinzarclaro);
-    padding: 15px;
-    /* Responsividade Relacionada ao Filho. */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    padding: 25px;
 }
 
-/* Config dos Cards */
+/* Propriedades Geral do h1 */
+h1 {
+    font-size: 35px;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+/* Propriedades geraal do Card */
 .card {
-    /* Position Relative Para Deixa o Botao Fixo. */
-    position: relative;
-    /* Config de Altura/Comprimento dos Cards. */
-    max-width: 400px;
-    min-height: 635px;
-    /* Propriedades Amais Para Deixa o Card Gostoso. */
-    background-color: var(--branco);
-    margin: 10px;
-    padding: 20px;
-    border-radius: 12px;
+    background-color: #fff;
+    padding: 30px; 
+    border-radius: 20px; 
     box-shadow: 2px 6px 8px rgba(0, 0, 0, 0.438);
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Propriedades Para Quando a Pessoa Clica ou 
-Passar o Mouse Por Cima Fazer Uma Transicao/Animacao */
-.card:hover, .card:active {
-    transform: translateY(-15px);
-    box-shadow: 15px 17px 15px rgba(0, 0, 0, 0.362);
+/* Responsividade para deixa os input/labes embaixo do outro alinhados */
+form {
+    display: flex;
+    flex-direction: column;
+} 
+
+/* Tamanho Label e Espacamento entre Elas */
+label {
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
-/* Config da Posisao Onde o Botao Vai Ficar Fixo. */
+/* Deixa o input e textarea mais Gostoso*/
+input, textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    border: 1px solid #7a7a7a;
+    font-size: 16px;
+}
+
+/* Centralizacap  e Tamanho*/
+input[type="radio"] {
+    margin-bottom: -20px;
+    width: 200px;
+    height: 20px;
+}
+
 .button-container {
-    display: none;
-    text-align: center;
-    position: absolute;
-    bottom: 35px;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: auto;
-}
-
-/* Config Para Desabilitar as Animaçoes do Card. */
-.card:hover .button-container, .card:active .button-container {
-    display: block;
+    margin: auto;
 }
 
 /* Config Geral do Botao. */
 button {
-    padding: 12px 20px;
-    border-radius: 25px;
-    font-size: 18px;
-    background-color: #4CAF50;
+    padding: 15px 25px;
+    border-radius: 35px;
+    font-size: 25px;
+    background-color: var(--azulescuro2);
     border: none;
     color: var(--branco);
     box-shadow: 4px 6px 8px rgba(54, 54, 54, 0.551);
@@ -119,42 +123,11 @@ footer {
     margin-top: auto;
 }
 
-h1 {
-    text-align: center;
-    margin-bottom: 30px;
-}
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-input[type="text"], input[type="number"], input[type="url"], textarea {
-    width: 100%;
-    padding: 5px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-input[type="file"] {
-    margin-bottom: 10px;
-}
-input[type="radio"] {
-    margin-right: 5px;
-}
-
-
-
-/*   Media Query   */
-/* Para Telas de 1200px Para Cima. */
-/* Computadores/Notebooks */
-@media (min-width: 1200px) {
+/* MEDIA QUERY */
+/* Telas Grandes */
+@media (min-width: 1000px){
     .logo {
-        width: 335px;
-    }
-
-    .card {
-        max-width: 660px;
-        min-height: 825px;
+        width: 350px;
     }
 
     footer {
@@ -162,63 +135,24 @@ input[type="radio"] {
     }
 }
 
-/* Telas Entre 800px a 1199.99px. */
-/* Telas de Celulares Maiores/Tablet */
-@media (min-width: 800px) and (max-width: 1199.99px) {
+/* Telas Normais */
+@media (max-width: 999.99px){
     .logo {
-        width: 420px;
-    }
-
-    .main {
-        margin-bottom: 20px;
-    }
-
-    .card {
-        max-width: 100%;
-    }
-
-    button {
-        padding: 27px 37px;
-        font-size: 37px;
-        border-radius: 100px;
+        width: 300px;
     }
 
     footer {
-        padding: 35px 0;
-        font-size: 45px;
+        font-size: 21px;
     }
 }
 
-/* Para Telas de no Maximo 799.99px. */
-/* Celulares de Porte Medio. */
-@media (max-width: 799.99px) {
+/* Telas Pequena */
+@media (max-width: 400px) {
     .logo {
-        width: 320px;
-    }
-
-    .card {
-        min-width: 100%;
-    }
-
-    button {
-        padding: 16px 22px;
-        font-size: 25px;
-        border-radius: 100px;
+        width: 200px;
     }
 
     footer {
-        font-size: 24px;
-    }
-}
-
-/* Para Telas de no Maximo 490px. */
-/* Celulares de Porte Pequeno. */
-@media (max-width: 490px) {
-    .logo {
-        width: 210px;
-    }
-
-    footer {
-        font-size: 18px;
+        font-size: 16px;
     }
 }
