@@ -22,7 +22,7 @@ def painel():
 def login():
     return render_template('login/index.html')
 
-@app.route('/cadastro/')#pip install -r requirements.txt
+@app.route('/cadastro/')
 def cadastro():
     return render_template('cadastro/index.html')
 
