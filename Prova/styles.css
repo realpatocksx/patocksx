@@ -1,0 +1,105 @@
+/* Variáveis Globais. */
+:root {
+    --azulclaro: rgb(70, 190, 255);
+    --azulescuro: rgb(0, 102, 255);
+    --azulescuro2:  rgb(0, 112, 255);
+    --cinzarclaro: #cecece;
+    --cinzarescuro: rgb(83, 83, 83);
+    --preto: black;
+    --branco: #ffffff;
+    --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Propriedades Globais. */
+* {
+    font-family: var(--font);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--cinzarclaro);
+}
+
+header {
+    background: var(--azulclaro)
+}
+
+.container {
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+}
+
+.logo {
+	font-size: 20px;
+}
+
+.menu {
+	display: none;
+	cursor: pointer;
+}
+
+.barra {
+	display: block;
+	width: 25px;
+	height: 3px;
+	margin: 5px auto;
+	background-color: var(--preto);
+	transition: all 0.3s ease-in-out;
+}
+
+.links {
+	list-style: none;
+	display: flex;
+}
+
+.links li {
+	margin-left: 30px;
+}
+
+.links a {
+	text-decoration: none;
+	color: var(--preto);
+	font-size: 22px;
+}
+
+.links a:hover {
+	color: var(--branco);
+}
+
+/*
+@media (max-width: 799.99px) {
+	.menu {
+		display: block;
+	}
+
+	.links {
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 100vh;
+		width: 100%;
+		background-color: #f5f5f5;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		clip-path: circle(100px at 90% -20%);
+		transition: all 0.5s ease-in-out;
+	}
+
+	.links.open {
+		clip-path: circle(1000px at 90% -20%);
+	}
+
+	.links li {
+		margin: 20px 0;
+	}
+
+	.links a {
+		font-size: 24px;
+	}
+}*/
