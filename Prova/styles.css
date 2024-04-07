@@ -1,8 +1,7 @@
-/* Variáveis Globais. */
 :root {
     --azulclaro: rgb(70, 190, 255);
     --azulescuro: rgb(0, 102, 255);
-    --azulescuro2:  rgb(0, 112, 255);
+    --azulescuro2: rgb(0, 112, 255);
     --cinzarclaro: #cecece;
     --cinzarescuro: rgb(83, 83, 83);
     --preto: black;
@@ -10,7 +9,6 @@
     --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Propriedades Globais. */
 * {
     font-family: var(--font);
     box-sizing: border-box;
@@ -22,84 +20,77 @@ body {
     background: var(--cinzarclaro);
 }
 
+/* Config Header*/
 header {
-    background: var(--azulclaro)
+    background: var(--azulclaro);
+    position: relative; 
+    padding: 20px; 
+    position: relative; 
 }
-
+ 
+/* Fique com muita dificudade */
+/* Responsividade para deixa um do lado do outro*/ 
 .container {
-	margin: 0 auto;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; 
 }
 
 .logo {
-	font-size: 20px;
+    font-size: 20px;
 }
 
 .menu {
-	display: none;
-	cursor: pointer;
+    cursor: pointer;
+    position: absolute; 
+    bottom: 10px; 
+    right: 20px; 
 }
 
 .barra {
-	display: block;
-	width: 25px;
-	height: 3px;
-	margin: 5px auto;
-	background-color: var(--preto);
-	transition: all 0.3s ease-in-out;
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--preto);
 }
 
 .links {
-	list-style: none;
-	display: flex;
+    list-style: none;
+    display: none; 
+    position: absolute; 
+    top: 100%; 
+    right: 0; 
+    background-color: var(--branco); 
+	border-radius: 10px;
 }
 
 .links li {
-	margin-left: 30px;
+    margin-left: 0; 
 }
 
 .links a {
-	text-decoration: none;
-	color: var(--preto);
-	font-size: 22px;
+    display: block;
+    padding: 10px 20px; 
+    text-decoration: none;
+    color: var(--preto);
+    font-size: 22px;
 }
 
 .links a:hover {
-	color: var(--branco);
+    background-color: var(--azulescuro2); 
+    color: var(--branco); 
 }
 
-/*
 @media (max-width: 799.99px) {
-	.menu {
-		display: block;
-	}
+    .links.active {
+        display: block;
+    }
+}
 
-	.links {
-		position: fixed;
-		top: 0;
-		left: 0;
-		height: 100vh;
-		width: 100%;
-		background-color: #f5f5f5;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		clip-path: circle(100px at 90% -20%);
-		transition: all 0.5s ease-in-out;
+@media (max-width: 350px) {
+	h1 {
+		font-size: 35px;
 	}
-
-	.links.open {
-		clip-path: circle(1000px at 90% -20%);
-	}
-
-	.links li {
-		margin: 20px 0;
-	}
-
-	.links a {
-		font-size: 24px;
-	}
-}*/
+}
