@@ -41,7 +41,7 @@ header {
 
 /* Espaçamento do Card com o Main*/
 .main {
-    padding: 25px;
+    padding: 20px 0;
 }
 
 /* Propriedades Geral do h1 */
@@ -53,6 +53,8 @@ h1 {
 
 /* Propriedades geraal do Card */
 .card {
+    width: 50%;
+    margin: auto;
     background-color: #fff;
     padding: 30px; 
     border-radius: 20px; 
@@ -73,19 +75,12 @@ label {
 }
 
 /* Deixa o input e textarea mais Gostoso*/
-input, textarea {
+input{
     padding: 10px;
     margin-bottom: 20px;
     border-radius: 12px;
     border: 1px solid #7a7a7a;
     font-size: 16px;
-}
-
-/* Centralizacap  e Tamanho*/
-input[type="radio"] {
-    margin-bottom: -20px;
-    width: 200px;
-    height: 20px;
 }
 
 .button-container {
@@ -94,7 +89,7 @@ input[type="radio"] {
 
 /* Config Geral do Botao. */
 button {
-    padding: 15px 25px;
+    padding: 10px 20px;
     border-radius: 35px;
     font-size: 25px;
     background-color: var(--azulescuro2);
@@ -135,11 +130,16 @@ footer {
 /* Telas Normais */
 @media (max-width: 999.99px){
     .logo {
-        width: 300px;
+        width: 280px;
     }
 
     .main {
+        padding: -20 0;
         margin: auto 0;
+    }
+
+    .card {
+        width: 92%;
     }
 
     footer {

@@ -18,5 +18,13 @@ def secao():
 def painel():
     return render_template('painel/index.html')
 
+@app.route('/login/')
+def login():
+    return render_template('login/index.html')
+
+@app.route('/cadastro/')
+def cadastro():
+    return render_template('cadastro/index.html')
+
 if __name__ == '__main__':
     app.run(debug=True)

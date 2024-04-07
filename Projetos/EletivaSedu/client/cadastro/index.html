@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='imagens/favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='cadastro/styles.css') }}">
+    <link rel="stylesheet" href="styles.css">
+    <title>Cadastro Eletiva Sedu</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <img class="logo" src="{{ url_for('static', filename='imagens/logo.png') }}" alt="Eletiva Sedu">
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="card">
+            <h1>Cadastro</h1>
+            <p style="text-align:center; padding-bottom: 15px;">Bem vindo(a), a sua primeira vez aqui!.</p>
+            <form action="/" method="post">
+                <label for="user">Nome de Usuario:</label>
+                <input type="text" name="user" id="user">
+                <label for="gmail">Email (Não obrigatorio!):</label>
+                <input type="email" name="email" id="email">
+                <label for="cargo">Tipo do Cadastro:</label>
+                <select id="cargo" name="cargo">
+                    <option value="Aluno">Aluno</option>
+                    <option value="Professor">Professor</option>
+                </select><br>
+                <div class="turma" style="display: block;">
+                    <label for="turma">Escolha Sua Turma:</label>
+                    <select id="turma" name="turma">
+                        <option value="1v1">1v1</option>
+                        <option value="1v2">1v2</option>
+                        <option value="1v3">1v3</option>
+                    </select>
+                </div><br>
+
+                <label for="senha">Senha:</label>
+                <input type="text" name="senha" id="senha">
+                <p>Lembre de coloca uma senha que não se esqueça!</p>
+                <p>E coloque uma senha segura!. </p>
+
+                <span>
+                    <p>Já tem conta? Melhor ainda! <a href="{{ url_for('login') }}">Acessar Aqui</a></p>
+                    <p>Quer saber mais sobre o site, ou sua política? <a href="sobre.html">Acessar Aqui</a></p>                    
+                </span> 
+                <br><div class="button-container">
+                    <button class="cadastrar" type="submit">Cadastrar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>DESENVOLVIDOR POR PHZNNKS</p>
+    </footer>
+</body>
+</html>

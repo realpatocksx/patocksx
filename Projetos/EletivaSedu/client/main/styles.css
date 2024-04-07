@@ -20,11 +20,10 @@
 /* Corpo Do Site. */
 body {
     background-color: var(--cinzarclaro);
-    margin: 0;
     /* Responsividade Relacionado Ao Pai. */
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 95.5vh;
 }
 
 /* Navbar do Site. */
@@ -146,8 +145,6 @@ footer {
     text-align: center;
     font-size: 20px;
     color: var(--branco);
-    /*  Para Deixa o Footer no Final do Site. */
-    margin-top: auto;
 }
 
 /*   Media Query   */

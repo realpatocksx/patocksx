@@ -12,8 +12,34 @@
 <body>
     <header>
         <nav>
-            <img src="" alt="Eletiva Sedu">
+            <img class="logo" src="{{ url_for('static', filename='imagens/logo.png') }}" alt="Eletiva Sedu">
         </nav>
     </header>
+
+    <main class="main">
+        <section class="card">
+            <h1>Login</h1>
+            <p style="text-align:center; padding-bottom: 15px;">Que bom em ter ve aqui de volta!.</p>
+            <form action="/" method="post">
+                <label for="user">Nome de Usuario:</label>
+                <input type="text" name="user" id="user">
+                <label for="senha">Senha:</label>
+                <input type="text" name="senha" id="senha">
+
+                <span>
+                    <p>Ainda não tem conta? <a href="{{ url_for('cadastro')}}">Acessar Aqui</a></p>
+                    <p>Vishhh, Esqueceu a senha? <a href="rlogin.html">Acessar Aqui</a> </p>
+                    <p>Quer saber mais sobre o site, ou sua política? <a href="sobre.html">Acessar Aqui</a></p>                    
+                </span> 
+                <br><div class="button-container">
+                    <button type="submit">Entrar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>DESENVOLVIDOR POR PHZNNKS</p>
+    </footer>
 </body>
 </html>
