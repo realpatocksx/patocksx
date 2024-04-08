@@ -19,7 +19,7 @@
     <main class="main">
         <section class="card">
             <h1>Cadastro de Eletiva</h1>
-            <form action="{{ url_for('main') }}" method="post">
+            <form action="{{ url_for('main') }}" method="post"onsubmit="return validateForm()">
                 <label for="titulo">Título da Eletiva:</label>
                 <input type="text" id="titulo" name="titulo"  placeholder="exemplo: TITULO DA ELETIVA">
         
