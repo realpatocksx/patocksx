@@ -80,7 +80,7 @@ input{
     margin-bottom: 20px;
     border-radius: 12px;
     border: 1px solid #7a7a7a;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .button-container {
@@ -104,6 +104,19 @@ button {
 button:hover {
     background-color: var(--azulclaro);
     box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.41);
+}
+
+/* Cargo e Escolha turma*/
+.cargo, #turma {
+    height: 35px;
+    border-radius: 35px;
+    font-size: 20px;
+    text-align: center;
+}
+
+/* Esconha Turma*/
+#turma {
+    width: 100px;
 }
 
 /* Config do Footer. */
