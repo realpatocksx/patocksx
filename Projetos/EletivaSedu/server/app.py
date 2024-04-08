@@ -11,7 +11,7 @@ def login():
 def cadastro():
     return render_template('cadastro/index.html')
 
-@app.route('/main/')
+@app.route('/main/', methods=['GET', 'POST'])
 def main():
     return render_template('main/index.html')
 
@@ -26,3 +26,6 @@ def painel():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+

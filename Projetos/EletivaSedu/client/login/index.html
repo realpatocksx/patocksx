@@ -20,7 +20,7 @@
         <section class="card">
             <h1>Login</h1>
             <p style="text-align:center; padding-bottom: 15px;">Que bom em ter ve aqui de volta!.</p>
-            <form action="/" method="post">
+            <form action="{{ url_for('main') }}" method="post">
                 <label for="user">Nome de Usuario:</label>
                 <input type="text" name="user" id="user" placeholder="Nome de usuario">
                 <label for="senha">Senha:</label>
