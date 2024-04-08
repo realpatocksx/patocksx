@@ -22,16 +22,16 @@
             <p style="text-align:center; padding-bottom: 15px;">Que bom em ter ve aqui de volta!.</p>
             <form action="/" method="post">
                 <label for="user">Nome de Usuario:</label>
-                <input type="text" name="user" id="user">
+                <input type="text" name="user" id="user" placeholder="Nome de usuario">
                 <label for="senha">Senha:</label>
-                <input type="text" name="senha" id="senha">
+                <input type="text" name="senha" id="senha" placeholder="Senha">
 
                 <span>
                     <p>Ainda não tem conta? <a href="{{ url_for('cadastro')}}">Acessar Aqui</a></p>
                     <p>Vishhh, Esqueceu a senha? <a href="rlogin.html">Acessar Aqui</a> </p>
                     <p>Quer saber mais sobre o site, ou sua política? <a href="sobre.html">Acessar Aqui</a></p>                    
                 </span> 
-                <br><div class="button-container">
+                <br><br><div class="button-container">
                     <button type="submit">Entrar</button>
                 </div>
             </form>

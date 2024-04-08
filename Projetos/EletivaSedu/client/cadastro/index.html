@@ -21,16 +21,18 @@
             <h1>Cadastro</h1>
             <p style="text-align:center; padding-bottom: 15px;">Bem vindo(a), a sua primeira vez aqui!.</p>
             <form action="/" method="post">
-                <label for="user">Nome de Usuario:</label>
-                <input type="text" name="user" id="user">
-                <label for="gmail">Email (Não obrigatorio!):</label>
-                <input type="email" name="email" id="email">
+                <label for="user">Nome Completo:</label>
+                <input type="text" name="user" id="user" placeholder="Nome Completo">
+                <label for="user">Usuario:</label>
+                <input type="text" name="user" id="user" placeholder="Nome de usuario">
+                <label for="gmail">Email:</label>
+                <input type="email" name="email" id="email" placeholder="exemplo: nomedoemail@gmail.com">
                 <label for="cargo">Tipo do Cadastro:</label>
-                <select id="cargo" name="cargo">
+                <select class="cargo" id="cargo" name="cargo">
                     <option value="Aluno">Aluno</option>
                     <option value="Professor">Professor</option>
                 </select><br>
-                <div class="turma" style="display: block;">
+                <div class="turma" id="divTurma" style="display: block;">
                     <label for="turma">Escolha Sua Turma:</label>
                     <select id="turma" name="turma">
                         <option value="1v1">1v1</option>
@@ -40,7 +42,7 @@
                 </div><br>
 
                 <label for="senha">Senha:</label>
-                <input type="text" name="senha" id="senha">
+                <input type="text" name="senha" id="senha" placeholder="Senha">
                 <p>Lembre de coloca uma senha que não se esqueça!</p>
                 <p>E coloque uma senha segura!. </p>
 
@@ -48,7 +50,7 @@
                     <p>Já tem conta? Melhor ainda! <a href="{{ url_for('login') }}">Acessar Aqui</a></p>
                     <p>Quer saber mais sobre o site, ou sua política? <a href="sobre.html">Acessar Aqui</a></p>                    
                 </span> 
-                <br><div class="button-container">
+                <br><br><div class="button-container">
                     <button class="cadastrar" type="submit">Cadastrar</button>
                 </div>
             </form>
@@ -58,5 +60,17 @@
     <footer>
         <p>DESENVOLVIDOR POR PHZNNKS</p>
     </footer>
+
+    <script>
+        document.getElementById('cargo').onchange = function() {
+            var cargo = this.value;
+            var divTurma = document.getElementById('divTurma');
+            if (cargo === 'Aluno') {
+                divTurma.style.display = 'block';
+            } else {
+                divTurma.style.display = 'none';
+            }
+        };
+    </script>
 </body>
 </html>

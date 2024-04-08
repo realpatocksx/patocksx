@@ -132,7 +132,7 @@ button:hover {
     padding-bottom: 20px;
 }
 
-/* Config Forumulario */
+/* Config Forumulario 
 .formulario {
     display: flex;
     flex-direction: column;
@@ -161,7 +161,7 @@ button:hover {
 
 .input-text {
     margin-bottom: 7px; 
-}
+}*/
 
 /* Config do Footer. */
 footer {
