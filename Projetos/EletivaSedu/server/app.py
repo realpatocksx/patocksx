@@ -7,8 +7,8 @@ app = Flask(__name__, template_folder=os.path.abspath('Projetos/EletivaSedu/clie
 def login():
     return render_template('login/index.html')
 
-@app.route('/cadastro/')
-def cadastro():
+@app.route('/cadastro/', methods=['GET', 'POST'])
+def cadastro():        
     return render_template('cadastro/index.html')
 
 @app.route('/main/', methods=['GET', 'POST'])
@@ -23,9 +23,5 @@ def secao():
 def painel():
     return render_template('painel/index.html')
 
-
 if __name__ == '__main__':
     app.run(debug=True)
-
-
-
