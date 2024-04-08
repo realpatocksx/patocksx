@@ -83,6 +83,11 @@ input{
     font-size: 18px;
 }
 
+#error-message-name, #error-message-user, #error-message-senha {
+    margin-top: -10px;
+    margin-bottom: 5px;
+}
+
 .button-container {
     margin: auto;
 }
