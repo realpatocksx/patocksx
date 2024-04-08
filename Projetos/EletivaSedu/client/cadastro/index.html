@@ -20,12 +20,12 @@
         <section class="card">
             <h1>Cadastro</h1>
             <p style="text-align:center; padding-bottom: 15px;">Bem vindo(a), a sua primeira vez aqui!.</p>
-            <form action="/" method="post">
-                <label for="user">Nome Completo:</label>
-                <input type="text" name="user" id="user" placeholder="Nome Completo">
-                <label for="user">Usuario:</label>
-                <input type="text" name="user" id="user" placeholder="Nome de usuario">
-                <label for="gmail">Email:</label>
+            <form id="cadastroForm" action="/" method="post" onsubmit="return validateForm()">
+                <label for="namecomplet">Nome Completo:</label>
+                <input type="text" name="namecomplet" id="namecomplet" placeholder="Nome Completo">
+                <label for="user">Usuário:</label>
+                <input type="text" name="user" id="user" placeholder="Nome de usuário">
+                <label for="email">Email:</label>
                 <input type="email" name="email" id="email" placeholder="exemplo: nomedoemail@gmail.com">
                 <label for="cargo">Tipo do Cadastro:</label>
                 <select class="cargo" id="cargo" name="cargo">
@@ -42,9 +42,8 @@
                 </div><br>
 
                 <label for="senha">Senha:</label>
-                <input type="text" name="senha" id="senha" placeholder="Senha">
-                <p>Lembre de coloca uma senha que não se esqueça!</p>
-                <p>E coloque uma senha segura!. </p>
+                <input type="password" name="senha" id="senha" placeholder="Senha">
+                <p>Lembre-se de criar uma senha segura e que você não esqueça!</p>
 
                 <span>
                     <p>Já tem conta? Melhor ainda! <a href="{{ url_for('login') }}">Acessar Aqui</a></p>
@@ -62,6 +61,25 @@
     </footer>
 
     <script>
+        function validateForm() {
+            const user = document.getElementById("user").value;
+            const senha = document.getElementById("senha").value;
+            const namecomplet = document.getElementById("namecomplet").value
+
+            if (user.trim() === "") {
+                alert("Por favor, crie seu nome de usuário.");
+                return false;
+            } else if (senha.trim() === "") {
+                alert("Por favor, crie sua senha.");
+                return false;
+            } else if (namecomplet.trim() === "") {
+                alert('Preencha o seu nome completo!.')
+                return false;
+            }
+
+            return true; 
+        }
+
         document.getElementById('cargo').onchange = function() {
             var cargo = this.value;
             var divTurma = document.getElementById('divTurma');
