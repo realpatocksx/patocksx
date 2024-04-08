@@ -14,7 +14,7 @@ def cadastro():
         nome_completo = request.form['nome']  
         print(nome_completo)
 
-    return render_template('cadastro/index.html')c
+    return render_template('cadastro/index.html')
 
 
 @app.route('/main/', methods=['GET', 'POST'])
