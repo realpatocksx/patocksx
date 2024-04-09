@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='imagens/favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='painel/styles.css') }}">
+    <link rel="stylesheet" href="styles.css">
+    <title>Cadastro de Eletiva</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <img class="logo" src="{{ url_for('static', filename='imagens/logo.png') }}"  alt="Imagem da Eletiva">
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="card">
+            <h1>Cadastro de Eletiva</h1>
+            <form action="{{ url_for('main') }}" method="post"onsubmit="return validateForm()">
+                <label for="titulo">Título da Eletiva:</label>
+                <input type="text" id="titulo" name="titulo"  placeholder="exemplo: TITULO DA ELETIVA">
+        
+                <label for="descricao">Descrição:</label>
+                <textarea id="descricao" name="descricao" rows="3"  placeholder="FALE UM POUCO SOBRE TUA ELETIVA."></textarea>
+        
+                <label for="imagem">Imagem:</label>
+                <input type="file" id="imagem" name="imagem" accept="image/*" required>
+        
+                <label for="video">URL do Vídeo:</label>
+                <input type="url" id="video" name="video"  placeholder="exemplo: https://youtube/pdheiuysmxs01011" required>
+        
+                <label for="max-inscricao">Máximo de Inscrições:</label>
+                <input type="number" id="max-inscricao" name="max-inscricao" placeholder="QUANTIDADE MAXIMA DA SUA ELETIVA">
+        
+                <label class="apresentarvideo" for="apresentar-video">Mostrar o Vídeo:</label>
+                <input type="radio" id="sim" name="apresentar-video" value="sim" >
+                <label class="labels" for="sim">Sim</label>
+                <input type="radio" id="nao" name="apresentar-video" value="nao">
+                <label class="labeln" for="nao">Não</label> <br>
+        
+                <div class="button-container">
+                    <button type="submit">Cadastrar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>DESENVOLVIDO POR DUCKSX/PHZNNKS</p>
+    </footer>
+</body>
+</html>
