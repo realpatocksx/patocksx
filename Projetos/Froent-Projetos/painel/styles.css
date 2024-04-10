@@ -41,7 +41,7 @@ header {
 
 /* Espaçamento do Card com o Main*/
 .main {
-    padding: 20px 0;
+    padding: 25px;
 }
 
 /* Propriedades Geral do h1 */
@@ -53,8 +53,6 @@ h1 {
 
 /* Propriedades geraal do Card */
 .card {
-    width: 50%;
-    margin: auto;
     background-color: #fff;
     padding: 30px; 
     border-radius: 20px; 
@@ -75,17 +73,19 @@ label {
 }
 
 /* Deixa o input e textarea mais Gostoso*/
-input{
+input, textarea {
     padding: 10px;
     margin-bottom: 20px;
     border-radius: 12px;
     border: 1px solid #7a7a7a;
-    font-size: 18px;
+    font-size: 16px;
 }
 
-#error-message-name, #error-message-user, #error-message-senha {
-    margin-top: -10px;
-    margin-bottom: 5px;
+/* Centralizacap  e Tamanho*/
+input[type="radio"] {
+    margin-bottom: -20px;
+    width: 200px;
+    height: 20px;
 }
 
 .button-container {
@@ -94,7 +94,7 @@ input{
 
 /* Config Geral do Botao. */
 button {
-    padding: 10px 20px;
+    padding: 15px 25px;
     border-radius: 35px;
     font-size: 25px;
     background-color: var(--azulescuro2);
@@ -109,19 +109,6 @@ button {
 button:hover {
     background-color: var(--azulclaro);
     box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.41);
-}
-
-/* Cargo e Escolha turma*/
-.cargo, #turma {
-    height: 35px;
-    border-radius: 35px;
-    font-size: 20px;
-    text-align: center;
-}
-
-/* Esconha Turma*/
-#turma {
-    width: 100px;
 }
 
 /* Config do Footer. */
@@ -148,16 +135,11 @@ footer {
 /* Telas Normais */
 @media (max-width: 999.99px){
     .logo {
-        width: 280px;
+        width: 300px;
     }
 
     .main {
-        padding: -20 0;
         margin: auto 0;
-    }
-
-    .card {
-        width: 92%;
     }
 
     footer {
