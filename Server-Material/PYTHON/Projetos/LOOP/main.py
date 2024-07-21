@@ -12,13 +12,13 @@ vn = valor inicial
 vf = valor final
 '''
 def enquanto(vn, vf):
-    print(f'Iniciando o loop na posição {vn} até a posição final de {vf}')
+
     
     if vn <= vf:
         print(vn)
         vn += 1
         enquanto(vn, vf)
     else:
-        return print('Teste')
+        return print('LOOP: FIM')
 
-enquanto(0, 5)
+enquanto(0, 5):
