@@ -21,4 +21,4 @@ def enquanto(vn, vf):
     else:
         return print('LOOP: FIM')
 
-enquanto(0, 5):
+enquanto(0, 5)
