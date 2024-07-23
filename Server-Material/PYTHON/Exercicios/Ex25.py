@@ -22,11 +22,11 @@ def votacao_eleicao(nome_eleito1, nome_eleito2, nome_eleito3):
 
 
     if voto_eleito1 > voto_eleito2 and voto_eleito1 > voto_eleito3:
-        print(f'O {nome_eleito1} é o mais novo eleito')
+        print(f'O {nome_eleito1} é o mais novo eleito com {voto_eleito1} votos')
     elif voto_eleito2 > voto_eleito1 and voto_eleito2 > voto_eleito3:
-        print(f'O {nome_eleito2} é o mais novo eleito')
+        print(f'O {nome_eleito2} é o mais novo eleito com {voto_eleito2} votos')
     elif voto_eleito3 > voto_eleito1 and voto_eleito3 > voto_eleito2:
-        print(f'O {nome_eleito3} é o mais novo eleito')
+        print(f'O {nome_eleito3} é o mais novo eleito com {voto_eleito3} votos')
 
 nome1 = input('Informe o nome do eleitor: ')
 nome2 = input('Informe o nome do eleitor: ')
