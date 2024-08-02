@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App de Música</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Meu App de Música</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="playlist.html">Playlists</a></li>
+                <li><a href="#">Biblioteca</a></li>
+                <li><a href="#">Configurações</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="player">
+            <div class="current-song">
+                <img src="album-cover.jpg" alt="Capa do Álbum">
+                <div>
+                    <h2>Nome da Música</h2>
+                    <p>Nome do Artista</p>
+                </div>
+            </div>
+            <div class="controls">
+                <button id="prev">Anterior</button>
+                <button id="play-pause">Play</button>
+                <button id="next">Próxima</button>
+            </div>
+        </section>
+        <section id="playlist">
+            <ul>
+                <li class="song">
+                    <span>Nome da Música 1</span> - <span>Nome do Artista</span>
+                </li>
+                <li class="song">
+                    <span>Nome da Música 2</span> - <span>Nome do Artista</span>
+                </li>
+                <!-- Adicione mais músicas aqui -->
+            </ul>
+        </section>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+</html>
