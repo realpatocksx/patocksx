@@ -140,3 +140,7 @@ main {
 #add-music-form button:hover {
     background-color: #990000;
 }
+
+.add-music{
+    text-align: center;
+}
