@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciar Playlists</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <header>
         <h1>Gerenciar Playlists Duck</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="playlist.html">Playlists</a></li>
+                <li><a href="{{ url_for('index') }}">Inicio</a></li>
+                <li><a href="{{ url_for('playlist') }}">Playlists</a></li>
                 <li><a href="#">Biblioteca</a></li>
                 <li><a href="#">Configurações</a></li>
             </ul>
@@ -21,15 +21,15 @@
     <main>
         <section id="add-music">
             <h2 class="add-music">Adicionar Música</h2>
-            <form id="add-music-form">
-              <!--  <label for="music-name">Nome da Música:</label>
-                <input type="text" id="music-name" required>
+            <form id="add-music-form" method="post" action="{{ url_for('add_music') }}">
+               <!-- <label for="music-name">Nome da Música:</label>
+                <input type="text" id="music-name" name="music_name" required>
                 
                 <label for="artist-name">Nome do Artista:</label>
-                <input type="text" id="artist-name" required>-->
+                <input type="text" id="artist-name" name="artist_name" required>-->
                 
                 <label for="music-url">URL da Música:</label>
-                <input type="url" id="music-url" required>
+                <input type="url" id="music-url" name="music_url" required>
                 
                 <button type="submit">Adicionar Música</button>
             </form>
@@ -41,6 +41,6 @@
             </ul>
         </section>
     </main>
-    <script src="scripts.js"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
 </body>
 </html>

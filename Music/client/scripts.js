@@ -3,9 +3,7 @@ document.getElementById("play-pause").addEventListener("click", function () {
   this.textContent = isPlaying ? "Play" : "Pause";
 });
 
-document
-  .getElementById("add-music-form")
-  .addEventListener("submit", function (event) {
+document.getElementById("add-music-form").addEventListener("submit", function (event) {
     event.preventDefault();
 
     const musicName = document.getElementById("music-name").value;
@@ -20,4 +18,4 @@ document
     playlist.appendChild(li);
 
     document.getElementById("add-music-form").reset();
-  });
+});
