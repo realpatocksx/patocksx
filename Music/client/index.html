@@ -33,17 +33,20 @@
                 <button id="next">Próxima</button>
             </div>
         </section>
+        
+        {% if tem_dados %}
         <section id="playlist">
             <ul>
+                {% for dado in dados %}
                 <li class="song">
-                    <span>Nome da Música 1</span> - <span>Nome do Artista</span>
+                    <span>{{ dado['Nome Musica'] }}</span> - <span>{{ dado['Nome Artista'] }}</span>
                 </li>
-                <li class="song">
-                    <span>Nome da Música 2</span> - <span>Nome do Artista</span>
-                </li>
-                <!-- Adicione mais músicas aqui -->
+                {% endfor %}
             </ul>
         </section>
+        {% else %}
+        <p class="nmusic">Não há músicas disponíveis. click <a href="{{ url_for('playlist') }}">aqui</a> para adicionar musicas</p>
+        {% endif %}
     </main>
     <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
 </body>

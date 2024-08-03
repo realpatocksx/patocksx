@@ -1,20 +1,21 @@
 from flask import Flask, render_template, request, redirect, url_for
-import pandas
+import pandas as pd
 import os
 
 app = Flask(__name__, template_folder=os.path.abspath('Music/client'), static_folder=os.path.abspath('Music/client')) 
 
-#Carregar tela inicial
+# Carregar tela inicial
 @app.route('/')
 def index():
-    return render_template('index.html')
+    tem_dados, dados = criar_excel()  
+    return render_template('index.html', tem_dados=tem_dados, dados=dados)
 
-#Carregar tela playlist
+# Carregar tela playlist
 @app.route('/playlist')
 def playlist():
     return render_template('playlist.html')
 
-#Gerenciar Sistema de musica de add-music
+# Gerenciar Sistema de musica de add-music
 @app.route('/add_music', methods=['POST'])
 def add_music():
     music_url = request.form.get('music_url')
@@ -22,19 +23,32 @@ def add_music():
     return redirect(url_for('playlist'))
 
 def criar_excel():
-    # Criar um DataFrame com os dados
-    data = {
-        "Nome Musica": [],
-        "Nome Artista": [],
-        "URL Musica": [],
-        "Foto Musica": []
-    }
+    caminho_arquivo = "Music/server/musics.xlsx"
+    if os.path.exists(caminho_arquivo):
+        df = pd.read_excel(caminho_arquivo, engine='openpyxl')
+        
+        # Verificando se uma coluna possui dados não nulos
+        coluna1 = df['Nome Musica'].notna().any()
+        coluna2 = df['Nome Artista'].notna().any()
+        coluna3 = df['URL Musica'].notna().any()
 
-    df = pandas.DataFrame(data)
+        if coluna1 and coluna2 and coluna3:
+            dados = df.to_dict(orient='records')
+            return True, dados
+        else: 
+            return False, []
+    else: 
+        dados_music = {
+            "Nome Musica": [],
+            "Nome Artista": [],
+            "URL Musica": [],
+            "Foto Musica": []
+        }
 
-    # Salvar o DataFrame em um arquivo Excel
-    df.to_excel("Music/server/musics.xlsx", index=False, engine='openpyxl')
-
+        df = pd.DataFrame(dados_music)
+        df.to_excel(caminho_arquivo, index=False, engine='openpyxl')
+        dados = df.to_dict(orient='records')
+        return True, dados
 
 if __name__ == '__main__':
     app.run(debug=True)
