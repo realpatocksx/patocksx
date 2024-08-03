@@ -35,7 +35,8 @@ def add_music():
         "Foto Musica": thumbnail 
     }
 
-    df = df.append(add_dados, ignore_index=True)
+    df = pd.concat([df, pd.DataFrame([add_dados])], ignore_index=True)
+    df.to_excel(caminho_arquivo, index=False, engine='openpyxl')
 
     return redirect(url_for('playlist'))
 
@@ -72,10 +73,3 @@ if __name__ == '__main__':
 
 
 #https://youtu.be/SEomzWa9PHU?si=HC7tiEb0vNk994Qj
-
-'''
-# Ou ainda (caso queira usar a indexação de posição)
-df.iloc[2, 0] = 10  # Usando .iloc para acessar a célula específica por posição
-print(df)
-
-'''
