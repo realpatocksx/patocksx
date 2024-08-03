@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 import pandas as pd
+from pytube import YouTube
 import os
 
 app = Flask(__name__, template_folder=os.path.abspath('Music/client'), static_folder=os.path.abspath('Music/client')) 
@@ -18,8 +19,24 @@ def playlist():
 # Gerenciar Sistema de musica de add-music
 @app.route('/add_music', methods=['POST'])
 def add_music():
+    caminho_arquivo = "Music/server/musics.xlsx"
+    df = pd.read_excel(caminho_arquivo, engine='openpyxl')
     music_url = request.form.get('music_url')
-    # Aqui você pode adicionar lógica para salvar a música adicionada em um banco de dados ou arquivo
+   
+    music = YouTube(music_url)
+    titulo = music.title
+    autor = music.author
+    thumbnail = music.thumbnail_url
+
+    add_dados = {
+        "Nome Musica": titulo,
+        "Nome Artista": autor,
+        "URL Musica": music_url,
+        "Foto Musica": thumbnail 
+    }
+
+    df = df.append(add_dados, ignore_index=True)
+
     return redirect(url_for('playlist'))
 
 def criar_excel():
@@ -52,3 +69,13 @@ def criar_excel():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+#https://youtu.be/SEomzWa9PHU?si=HC7tiEb0vNk994Qj
+
+'''
+# Ou ainda (caso queira usar a indexação de posição)
+df.iloc[2, 0] = 10  # Usando .iloc para acessar a célula específica por posição
+print(df)
+
+'''
