@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
+import pandas
 import os
 
 app = Flask(__name__, template_folder=os.path.abspath('Music/client'), static_folder=os.path.abspath('Music/client')) 
@@ -19,6 +20,21 @@ def add_music():
     music_url = request.form.get('music_url')
     # Aqui você pode adicionar lógica para salvar a música adicionada em um banco de dados ou arquivo
     return redirect(url_for('playlist'))
+
+def criar_excel():
+    # Criar um DataFrame com os dados
+    data = {
+        "Nome Musica": [],
+        "Nome Artista": [],
+        "URL Musica": [],
+        "Foto Musica": []
+    }
+
+    df = pandas.DataFrame(data)
+
+    # Salvar o DataFrame em um arquivo Excel
+    df.to_excel("Music/server/musics.xlsx", index=False, engine='openpyxl')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
