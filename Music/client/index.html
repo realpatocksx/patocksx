@@ -11,7 +11,7 @@
         <h1>Duck Music</h1>
         <nav>
             <ul>
-                <li><a href="{{ url_for('index') }}">Inicio</a></li>
+                <li><a href="{{ url_for('index') }}">Início</a></li>
                 <li><a href="{{ url_for('playlist') }}">Playlists</a></li>
                 <li><a href="#">Biblioteca</a></li>
                 <li><a href="#">Configurações</a></li>
@@ -21,11 +21,13 @@
     <main>
         <section id="player">
             <div class="current-song">
-                <img src="{{ url_for('static', filename='capa.png') }}" alt="Capa do Artista">
+                {% if tocarmusicordem %}
+                <img src="{{ tocarmusicordem['Foto Musica'] }}" alt="Capa do Artista">
                 <div>
-                    <h2>Nome da Música</h2>
-                    <p>Nome do Artista</p>
+                    <h2>{{ tocarmusicordem['Nome Musica'] }}</h2>
+                    <p>{{ tocarmusicordem['Nome Artista'] }}</p>
                 </div>
+                {% endif %}
             </div>
             <div class="controls">
                 <button id="prev">Anterior</button>
@@ -45,9 +47,9 @@
             </ul>
         </section>
         {% else %}
-        <p class="nmusic">Não há músicas disponíveis. click <a href="{{ url_for('playlist') }}">aqui</a> para adicionar musicas</p>
+        <p class="nmusic">Não há músicas disponíveis. Clique <a href="{{ url_for('playlist') }}">aqui</a> para adicionar músicas.</p>
         {% endif %}
     </main>
-    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <script src="{{ url_for('static',filename='scripts.js') }}"></script>
 </body>
 </html>

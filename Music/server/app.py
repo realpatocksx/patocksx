@@ -8,15 +8,16 @@ app = Flask(__name__, template_folder=os.path.abspath('Music/client'), static_fo
 # Carregar tela inicial
 @app.route('/')
 def index():
-    tem_dados, dados = criar_excel()  
-    return render_template('index.html', tem_dados=tem_dados, dados=dados)
+    tem_dados, dados = criar_excel()
+    tocarmusicordem = tocarmusic()  # Atualizado para capturar o retorno da função tocarmusic
+    return render_template('index.html', tem_dados=tem_dados, dados=dados, tocarmusicordem=tocarmusicordem)
 
 # Carregar tela playlist
 @app.route('/playlist')
 def playlist():
     return render_template('playlist.html')
 
-# Gerenciar Sistema de musica de add-music
+# Gerenciar Sistema de música de add-music
 @app.route('/add_music', methods=['POST'])
 def add_music():
     caminho_arquivo = "Music/server/musics.xlsx"
@@ -68,8 +69,17 @@ def criar_excel():
         dados = df.to_dict(orient='records')
         return True, dados
 
+def tocarmusic():
+    musicinicial = 0
+    caminho_arquivo = "Music/server/musics.xlsx"
+    df = pd.read_excel(caminho_arquivo, engine='openpyxl')
+    tocarmusicordem = df.iloc[musicinicial].to_dict()  # Converte a linha para um dicionário
+    return tocarmusicordem
+
 if __name__ == '__main__':
     app.run(debug=True)
 
 
-#https://youtu.be/SEomzWa9PHU?si=HC7tiEb0vNk994Qj
+'''
+
+'''
