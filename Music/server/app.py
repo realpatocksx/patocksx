@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 import pandas as pd
 from pytube import YouTube
-import os
+import os, vlc
 
 app = Flask(__name__, template_folder=os.path.abspath('Music/client'), static_folder=os.path.abspath('Music/client'))
 musicinicial = 0
@@ -52,9 +52,16 @@ def trigger_function():
     button_name = data.get('button')
     
     # Lógica para cada botão
-    if button_name == "Play/Pause":
+    if button_name == "Play/Pause":        
         print("Função Play/Pause acionada")
-    
+
+        caminho_arquivo = "Music/server/musics.xlsx"
+        df = pd.read_excel(caminho_arquivo, engine='openpyxl')
+        url = df.loc[musicinicial, 'URL Musica']
+        print(url)
+        player = vlc.MediaPlayer(url)
+        player.play()
+
     elif button_name == "Anterior":
         if musicinicial > 0:
             musicinicial -= 1
@@ -111,3 +118,16 @@ def tocarmusic():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+'''
+pulseaudio --start
+http stream erro local stream 1 error: cancellation (0x8)
+sudo apt-get install vlc
+
+sudo apt-get update
+
+https://youtu.be/SEomzWa9PHU?si=HC7tiEb0vNk994Qj
+
+https://studious-lamp-x5rw74qg6gr5fp755-5000.app.github.dev/
+https://studious-lamp-x5rw74qg6gr5fp755-5000.app.github.dev/
+'''
