@@ -1,15 +1,15 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, jsonify
 import pandas as pd
 from pytube import YouTube
 import os
 
-app = Flask(__name__, template_folder=os.path.abspath('Music/client'), static_folder=os.path.abspath('Music/client')) 
+app = Flask(__name__, template_folder=os.path.abspath('Music/client'), static_folder=os.path.abspath('Music/client'))
 
 # Carregar tela inicial
 @app.route('/')
 def index():
     tem_dados, dados = criar_excel()
-    tocarmusicordem = tocarmusic()  # Atualizado para capturar o retorno da função tocarmusic
+    tocarmusicordem = tocarmusic()
     return render_template('index.html', tem_dados=tem_dados, dados=dados, tocarmusicordem=tocarmusicordem)
 
 # Carregar tela playlist
@@ -20,10 +20,12 @@ def playlist():
 # Gerenciar Sistema de música de add-music
 @app.route('/add_music', methods=['POST'])
 def add_music():
+    data = request.get_json()
+    music_url = data.get('music_url')
+   
     caminho_arquivo = "Music/server/musics.xlsx"
     df = pd.read_excel(caminho_arquivo, engine='openpyxl')
-    music_url = request.form.get('music_url')
-   
+    
     music = YouTube(music_url)
     titulo = music.title
     autor = music.author
@@ -33,13 +35,29 @@ def add_music():
         "Nome Musica": titulo,
         "Nome Artista": autor,
         "URL Musica": music_url,
-        "Foto Musica": thumbnail 
+        "Foto Musica": thumbnail
     }
 
     df = pd.concat([df, pd.DataFrame([add_dados])], ignore_index=True)
     df.to_excel(caminho_arquivo, index=False, engine='openpyxl')
 
-    return redirect(url_for('playlist'))
+    return jsonify({"message": "Música adicionada com sucesso!"})
+
+# Nova rota para processar o clique dos botão 
+@app.route('/trigger_function', methods=['POST'])
+def trigger_function():
+    data = request.get_json()
+    button_name = data.get('button')
+    
+    # Lógica para cada botão
+    if button_name == "Play/Pause":
+        print("Função Play/Pause acionada")
+    elif button_name == "Anterior":
+        print("Função Anterior acionada")
+    elif button_name == "Proximo":
+        print("Função Proximo acionada")
+    
+    return jsonify({"message": f"Função para '{button_name}' acionada no servidor"})
 
 def criar_excel():
     caminho_arquivo = "Music/server/musics.xlsx"
@@ -78,8 +96,3 @@ def tocarmusic():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-
-'''
-
-'''
