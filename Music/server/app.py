@@ -59,8 +59,6 @@ def trigger_function():
         df = pd.read_excel(caminho_arquivo, engine='openpyxl')
         url = df.loc[musicinicial, 'URL Musica']
         print(url)
-        player = vlc.MediaPlayer(url)
-        player.play()
 
     elif button_name == "Anterior":
         if musicinicial > 0:
