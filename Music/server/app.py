@@ -1,6 +1,5 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, send_file
 import pandas as pd
-from pytube import YouTube
 import os, yt_dlp
 
 app = Flask(__name__, template_folder=os.path.abspath('Music/client'), static_folder=os.path.abspath('Music/client'))
@@ -26,11 +25,12 @@ def add_music():
    
     caminho_arquivo = "Music/server/musics.xlsx"
     df = pd.read_excel(caminho_arquivo, engine='openpyxl')
+
+    # Usando yt-dlp para capturar informações do vídeo
+    titulo, autor, thumbnail = get_video_info(music_url)
     
-    music = YouTube(music_url)
-    titulo = music.title
-    autor = music.author
-    thumbnail = music.thumbnail_url
+    if not titulo or not autor:
+        return jsonify({"error": "Erro ao obter informações do vídeo."}), 500
 
     add_dados = {
         "Nome Musica": titulo,
@@ -44,6 +44,25 @@ def add_music():
 
     return jsonify({"message": "Música adicionada com sucesso!"})
 
+# Função para capturar informações do vídeo usando yt-dlp
+def get_video_info(url):
+    ydl_opts = {
+        'quiet': True,
+        'no_warnings': True,
+        'format': 'bestaudio/best',
+    }
+
+    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+        try:
+            info_dict = ydl.extract_info(url, download=False)
+            title = info_dict.get('title', 'Título Desconhecido')
+            author = info_dict.get('uploader', 'Autor Desconhecido')
+            thumbnail = info_dict.get('thumbnail', None)
+            return title, author, thumbnail
+        except Exception as e:
+            print(f"Erro ao extrair informações do vídeo: {e}")
+            return None, None, None
+
 # Nova rota para processar o clique dos botões 
 @app.route('/trigger_function', methods=['POST'])
 def trigger_function():
@@ -51,47 +70,46 @@ def trigger_function():
     data = request.get_json()
     button_name = data.get('button')
     
-    # Lógica para cada botão
     if button_name == "Play/Pause":        
         print("Função Play/Pause acionada")
 
         caminho_arquivo = "Music/server/musics.xlsx"
         df = pd.read_excel(caminho_arquivo, engine='openpyxl')
         url = df.loc[musicinicial, 'URL Musica']
-        print(url)
+        title = df.loc[musicinicial, 'Nome Musica']
+        download_dir = os.path.join(os.getcwd(), "Music/server/musics")
+        file_path = os.path.join(download_dir, f"{title}.mp3")
 
-        # Crie o diretório se ele não existir
-        download_dir = "Music/server/musics"
-        os.makedirs(download_dir, exist_ok=True)
+        # Verificar se o arquivo já existe
+        if not os.path.exists(file_path):
+            ydl_opts = {
+                'format': 'bestaudio/best',
+                'postprocessors': [{
+                    'key': 'FFmpegExtractAudio',
+                    'preferredcodec': 'mp3',
+                    'preferredquality': '192',
+                }],
+                'outtmpl': os.path.join(download_dir, f"{title}.%(ext)s"),  # Remove a extensão .mp3 do outtmpl
+                'cookiefile': 'Music/server/cookies.txt'
+            }
 
-        ydl_opts = {
-            'format': 'bestaudio/best',
-            'postprocessors': [{
-                'key': 'FFmpegExtractAudio',
-                'preferredcodec': 'mp3',
-                'preferredquality': '192',
-            }],
-            'outtmpl': os.path.join(download_dir, '%(title)s.%(ext)s'),  # Caminho para o diretório de download
-            'cookiefile': 'Music/server/cookies.txt'  # Caminho para o arquivo de cookies
-        }
+            try:
+                with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+                    ydl.download([url])
+                    print(f"Download concluído: {title}.mp3")
+            except Exception as e:
+                print(f"Erro ao baixar a música: {e}")
+                return jsonify({"error": "Erro ao baixar a música"}), 500
 
-        try:
-            with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-                ydl.download([url])
-                info_dict = ydl.extract_info(url, download=False)
-                title = info_dict.get('title', None)
-                print(f"Download concluído: {title}.mp3")
-                return jsonify({"file": os.path.join(download_dir, title + ".mp3")})
-        except Exception as e:
-            print(f"Erro ao baixar a música: {e}")
-            return jsonify({"error": "Erro ao baixar a música"}), 500
-
+        # Retornar o caminho da música
+        return jsonify({"file": f"/play_music/{musicinicial}"})
+    
     elif button_name == "Anterior":
         if musicinicial > 0:
             musicinicial -= 1
         caminho_arquivo = "Music/server/musics.xlsx"
         df = pd.read_excel(caminho_arquivo, engine='openpyxl')
-        tocarmusicordem = df.iloc[musicinicial].to_dict()  # Converte a linha para um dicionário
+        tocarmusicordem = df.iloc[musicinicial].to_dict()  
         return jsonify(tocarmusicordem)
     
     elif button_name == "Proximo":
@@ -99,18 +117,33 @@ def trigger_function():
         df = pd.read_excel(caminho_arquivo, engine='openpyxl')
         if musicinicial < len(df) - 1:
             musicinicial += 1
-        tocarmusicordem = df.iloc[musicinicial].to_dict()  # Converte a linha para um dicionário
+        tocarmusicordem = df.iloc[musicinicial].to_dict()  
         return jsonify(tocarmusicordem)
 
-    # Se o button_name não corresponder a nenhuma opção conhecida
     return jsonify({"message": f"Função para '{button_name}' não reconhecida no servidor"}), 400
+
+
+# Nova rota para servir a música protegida
+@app.route('/play_music/<int:music_index>', methods=['GET'])
+def play_music(music_index):
+    caminho_arquivo = "Music/server/musics.xlsx"
+    df = pd.read_excel(caminho_arquivo, engine='openpyxl')
+    title = df.loc[music_index, 'Nome Musica']
+    
+    # Aqui, assegure que o caminho seja correto e não tenha duplicação
+    download_dir = os.path.join(os.getcwd(), "Music/server/musics")  # Garante que o caminho seja relativo à raiz do projeto
+    file_path = os.path.join(download_dir, f"{title}.mp3")
+    
+    if not os.path.exists(file_path):
+        return jsonify({"error": "Arquivo não encontrado."}), 404
+    
+    return send_file(file_path, as_attachment=False, download_name=f"{title}.mp3")
 
 def criar_excel():
     caminho_arquivo = "Music/server/musics.xlsx"
     if os.path.exists(caminho_arquivo):
         df = pd.read_excel(caminho_arquivo, engine='openpyxl')
         
-        # Verificando se uma coluna possui dados não nulos
         coluna1 = df['Nome Musica'].notna().any()
         coluna2 = df['Nome Artista'].notna().any()
         coluna3 = df['URL Musica'].notna().any()
@@ -136,7 +169,7 @@ def criar_excel():
 def tocarmusic():
     caminho_arquivo = "Music/server/musics.xlsx"
     df = pd.read_excel(caminho_arquivo, engine='openpyxl')
-    tocarmusicordem = df.iloc[musicinicial].to_dict()  # Converte a linha para um dicionário
+    tocarmusicordem = df.iloc[musicinicial].to_dict()  
     return tocarmusicordem
 
 if __name__ == '__main__':
