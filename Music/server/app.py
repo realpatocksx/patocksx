@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 import pandas as pd
 from pytube import YouTube
-import os, vlc
+import os, yt_dlp
 
 app = Flask(__name__, template_folder=os.path.abspath('Music/client'), static_folder=os.path.abspath('Music/client'))
 musicinicial = 0
@@ -60,11 +60,35 @@ def trigger_function():
         url = df.loc[musicinicial, 'URL Musica']
         print(url)
 
+        # Crie o diretório se ele não existir
+        download_dir = "Music/server/musics"
+        os.makedirs(download_dir, exist_ok=True)
+
+        ydl_opts = {
+            'format': 'bestaudio/best',
+            'postprocessors': [{
+                'key': 'FFmpegExtractAudio',
+                'preferredcodec': 'mp3',
+                'preferredquality': '192',
+            }],
+            'outtmpl': os.path.join(download_dir, '%(title)s.%(ext)s'),  # Caminho para o diretório de download
+            'cookiefile': 'Music/server/cookies.txt'  # Caminho para o arquivo de cookies
+        }
+
+        try:
+            with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+                ydl.download([url])
+                info_dict = ydl.extract_info(url, download=False)
+                title = info_dict.get('title', None)
+                print(f"Download concluído: {title}.mp3")
+                return jsonify({"file": os.path.join(download_dir, title + ".mp3")})
+        except Exception as e:
+            print(f"Erro ao baixar a música: {e}")
+            return jsonify({"error": "Erro ao baixar a música"}), 500
+
     elif button_name == "Anterior":
         if musicinicial > 0:
             musicinicial -= 1
-        else:
-            musicinicial = 0
         caminho_arquivo = "Music/server/musics.xlsx"
         df = pd.read_excel(caminho_arquivo, engine='openpyxl')
         tocarmusicordem = df.iloc[musicinicial].to_dict()  # Converte a linha para um dicionário
@@ -77,8 +101,9 @@ def trigger_function():
             musicinicial += 1
         tocarmusicordem = df.iloc[musicinicial].to_dict()  # Converte a linha para um dicionário
         return jsonify(tocarmusicordem)
-    
-    return jsonify({"message": f"Função para '{button_name}' acionada no servidor"})
+
+    # Se o button_name não corresponder a nenhuma opção conhecida
+    return jsonify({"message": f"Função para '{button_name}' não reconhecida no servidor"}), 400
 
 def criar_excel():
     caminho_arquivo = "Music/server/musics.xlsx"
@@ -116,16 +141,3 @@ def tocarmusic():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-'''
-pulseaudio --start
-http stream erro local stream 1 error: cancellation (0x8)
-sudo apt-get install vlc
-
-sudo apt-get update
-
-https://youtu.be/SEomzWa9PHU?si=HC7tiEb0vNk994Qj
-
-https://studious-lamp-x5rw74qg6gr5fp755-5000.app.github.dev/
-https://studious-lamp-x5rw74qg6gr5fp755-5000.app.github.dev/
-'''
