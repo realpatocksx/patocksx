@@ -22,13 +22,18 @@ def playlist():
 def add_music():
     data = request.get_json()
     music_url = data.get('music_url')
-   
-    caminho_arquivo = "Music/server/musics.xlsx"
-    df = pd.read_excel(caminho_arquivo, engine='openpyxl')
 
-    # Usando yt-dlp para capturar informações do vídeo
+    caminho_arquivo = "Music/server/musics.xlsx"
+    print(f"Acessando arquivo: {caminho_arquivo}")
+
+    try:
+        df = pd.read_excel(caminho_arquivo, engine='openpyxl')
+    except Exception as e:
+        print(f"Erro ao ler o arquivo: {e}")
+        return jsonify({"error": "Erro ao ler o arquivo."}), 500
+
     titulo, autor, thumbnail = get_video_info(music_url)
-    
+
     if not titulo or not autor:
         return jsonify({"error": "Erro ao obter informações do vídeo."}), 500
 
@@ -40,7 +45,12 @@ def add_music():
     }
 
     df = pd.concat([df, pd.DataFrame([add_dados])], ignore_index=True)
-    df.to_excel(caminho_arquivo, index=False, engine='openpyxl')
+    
+    try:
+        df.to_excel(caminho_arquivo, index=False, engine='openpyxl')
+    except Exception as e:
+        print(f"Erro ao salvar o arquivo: {e}")
+        return jsonify({"error": "Erro ao salvar o arquivo."}), 500
 
     return jsonify({"message": "Música adicionada com sucesso!"})
 
@@ -174,3 +184,45 @@ def tocarmusic():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+'''
+@app.route('/add_music', methods=['POST'])
+def add_music():
+    data = request.get_json()
+    music_url = data.get('music_url')
+
+    caminho_arquivo = "Music/server/musics.xlsx"
+    print(f"Acessando arquivo: {caminho_arquivo}")
+
+    try:
+        df = pd.read_excel(caminho_arquivo, engine='openpyxl')
+    except Exception as e:
+        print(f"Erro ao ler o arquivo: {e}")
+        return jsonify({"error": "Erro ao ler o arquivo."}), 500
+
+    titulo, autor, thumbnail = get_video_info(music_url)
+
+    if not titulo or not autor:
+        return jsonify({"error": "Erro ao obter informações do vídeo."}), 500
+
+    add_dados = {
+        "Nome Musica": titulo,
+        "Nome Artista": autor,
+        "URL Musica": music_url,
+        "Foto Musica": thumbnail
+    }
+
+    df = pd.concat([df, pd.DataFrame([add_dados])], ignore_index=True)
+    
+    try:
+        df.to_excel(caminho_arquivo, index=False, engine='openpyxl')
+    except Exception as e:
+        print(f"Erro ao salvar o arquivo: {e}")
+        return jsonify({"error": "Erro ao salvar o arquivo."}), 500
+
+    return jsonify({"message": "Música adicionada com sucesso!"})
+
+https://youtu.be/SEomzWa9PHU?si=HC7tiEb0vNk994Qj
+
+'''
