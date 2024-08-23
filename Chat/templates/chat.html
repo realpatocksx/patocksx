@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-sidebar">
+            <button onclick="startGlobalChat()">Global Chat</button>
+            <button onclick="startUserChat()">User Chat</button>
+        </div>
+        <div class="chat-window">
+            <div id="chat-messages">
+                <!-- Example of chat message -->
+                <div class="chat-message">
+                    <img src="{{ url_for('static', filename='images/user1.jpg') }}" alt="User Photo">
+                    <div class="chat-bubble">
+                        <span class="chat-username">User1</span>
+                        <p class="chat-text">Hello, how are you?</p>
+                        <span class="chat-time">10:30 AM</span>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Type your message...">
+                <button type="submit">Send</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
