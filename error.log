@@ -1,0 +1,45 @@
+2024-08-23 00:08:38,220:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-23 00:08:38,220:INFO:[33mPress CTRL+C to quit[0m
+2024-08-23 00:08:38,221:INFO: * Restarting with stat
+2024-08-23 00:08:38,639:WARNING: * Debugger is active!
+2024-08-23 00:08:38,643:INFO: * Debugger PIN: 103-971-586
+2024-08-23 00:09:03,788:INFO:127.0.0.1 - - [23/Aug/2024 00:09:03] "[35m[1mGET /?vscodeBrowserReqId=1724371740940 HTTP/1.1[0m" 500 -
+2024-08-23 00:09:04,590:INFO:127.0.0.1 - - [23/Aug/2024 00:09:04] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-08-23 00:09:04,592:INFO:127.0.0.1 - - [23/Aug/2024 00:09:04] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-08-23 00:09:05,443:INFO:127.0.0.1 - - [23/Aug/2024 00:09:05] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2024-08-23 00:09:42,975:INFO: * Detected change in '/workspaces/patocksx/DuckChat/server/app.py', reloading
+2024-08-23 00:09:43,020:INFO: * Restarting with stat
+2024-08-23 00:10:14,476:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-23 00:10:14,476:INFO:[33mPress CTRL+C to quit[0m
+2024-08-23 00:10:14,477:INFO: * Restarting with stat
+2024-08-23 00:10:14,815:WARNING: * Debugger is active!
+2024-08-23 00:10:14,815:INFO: * Debugger PIN: 103-971-586
+2024-08-23 00:10:18,291:INFO:127.0.0.1 - - [23/Aug/2024 00:10:18] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2024-08-23 00:10:19,080:INFO:127.0.0.1 - - [23/Aug/2024 00:10:19] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2024-08-23 00:10:19,221:INFO:127.0.0.1 - - [23/Aug/2024 00:10:19] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2024-08-23 00:10:19,718:INFO:127.0.0.1 - - [23/Aug/2024 00:10:19] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2024-08-23 00:10:20,460:INFO:127.0.0.1 - - [23/Aug/2024 00:10:20] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2024-08-23 00:10:36,299:INFO:127.0.0.1 - - [23/Aug/2024 00:10:36] "[35m[1mGET /?vscodeBrowserReqId=1724371835829 HTTP/1.1[0m" 500 -
+2024-08-23 00:10:36,685:INFO:127.0.0.1 - - [23/Aug/2024 00:10:36] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2024-08-23 00:10:36,691:INFO:127.0.0.1 - - [23/Aug/2024 00:10:36] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2024-08-23 00:10:37,159:INFO:127.0.0.1 - - [23/Aug/2024 00:10:37] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2024-08-23 00:10:41,637:INFO: * Detected change in '/workspaces/patocksx/DuckChat/server/app.py', reloading
+2024-08-23 00:10:41,700:INFO: * Restarting with stat
+2024-08-23 00:10:42,248:WARNING: * Debugger is active!
+2024-08-23 00:10:42,249:INFO: * Debugger PIN: 103-971-586
+2024-08-23 00:10:44,716:INFO:127.0.0.1 - - [23/Aug/2024 00:10:44] "GET /?vscodeBrowserReqId=1724371844577 HTTP/1.1" 200 -
+2024-08-23 00:10:56,331:INFO:127.0.0.1 - - [23/Aug/2024 00:10:56] "[32mPOST /send_message HTTP/1.1[0m" 302 -
+2024-08-23 00:10:56,516:INFO:127.0.0.1 - - [23/Aug/2024 00:10:56] "GET / HTTP/1.1" 200 -
+2024-08-23 00:11:30,419:INFO:127.0.0.1 - - [23/Aug/2024 00:11:30] "GET / HTTP/1.1" 200 -
+2024-08-23 00:11:30,767:INFO:127.0.0.1 - - [23/Aug/2024 00:11:30] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-23 00:11:44,108:INFO:127.0.0.1 - - [23/Aug/2024 00:11:44] "GET / HTTP/1.1" 200 -
+2024-08-23 00:11:56,747:INFO:127.0.0.1 - - [23/Aug/2024 00:11:56] "[32mPOST /send_message HTTP/1.1[0m" 302 -
+2024-08-23 00:11:57,251:INFO:127.0.0.1 - - [23/Aug/2024 00:11:57] "GET / HTTP/1.1" 200 -
+2024-08-23 00:12:25,228:INFO:127.0.0.1 - - [23/Aug/2024 00:12:25] "GET / HTTP/1.1" 200 -
+2024-08-23 00:12:48,903:INFO:127.0.0.1 - - [23/Aug/2024 00:12:48] "[32mPOST /send_message HTTP/1.1[0m" 302 -
+2024-08-23 00:12:49,207:INFO:127.0.0.1 - - [23/Aug/2024 00:12:49] "GET / HTTP/1.1" 200 -
+2024-08-23 00:13:03,331:INFO:127.0.0.1 - - [23/Aug/2024 00:13:03] "GET / HTTP/1.1" 200 -
+2024-08-23 00:13:21,714:INFO:127.0.0.1 - - [23/Aug/2024 00:13:21] "[32mPOST /send_message HTTP/1.1[0m" 302 -
+2024-08-23 00:13:22,326:INFO:127.0.0.1 - - [23/Aug/2024 00:13:22] "GET / HTTP/1.1" 200 -
