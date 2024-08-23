@@ -9,6 +9,9 @@ BB
 Link: <a href="https://patocksx.cloud/Projetos/EletivaSedu/client/main/"> Eletiva Sedu </a> Site  ainda em desenvolvimento!. <br>
 
 
+mkdir flask_app
+cd flask_app
+mkdir templates static
 
 <h2> Obs: Ocupado estudando BlackHat e RedHat/WhiteHat!. </h2>
 
