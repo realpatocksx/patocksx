@@ -18,11 +18,12 @@
                 <div class="chat-message">
                     <img src="{{ url_for('static', filename='images/user1.jpg') }}" alt="User Photo">
                     <div class="chat-bubble">
-                        <span class="chat-username">User1</span>
+                        <span class="chat-username"> {{username}} </span>
                         <p class="chat-text">Hello, how are you?</p>
                         <span class="chat-time">10:30 AM</span>
                     </div>
                 </div>
+
             </div>
             <div class="chat-input">
                 <input type="text" placeholder="Type your message...">

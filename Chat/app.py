@@ -20,8 +20,8 @@ def login():
   
     if verificar_user:
         linha_gmail = linha.iloc[0]['Gmail']
-        linha_password = linha.iloc[0]['Password']
-        linha_password = str(password)
+        linha_password = str(linha.iloc[0]['Password'])
+
         print(password)
         print(linha_password)
         if password == linha_password:
