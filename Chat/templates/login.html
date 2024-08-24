@@ -4,22 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='auth.css') }}">
 </head>
 <body>
-    <div class="container">
-        <div class="form-container">
-            <h1>Login</h1>
-            <form action="/login" method="post">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" required>
-                
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
-                
-                <button type="submit">Login</button>
+    <div class="auth-container">
+        <div class="auth-form">
+            <h2>Login</h2>
+            <form action="/login" method="POST">
+                <div class="input-group">
+                    <label for="user">Nome De Usuario</label>
+                    <input type="'text" name="username" placeholder="Digite seu usuario">
+                </div>
+                <div class="input-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+                </div>
+                <button type="submit">Entrar</button>
             </form>
-            <p>Don't have an account? <a href="/register">Register here</a></p>
+            <p class="auth-link">Não tem uma conta? <a href="/register">Cadastre-se</a></p>
         </div>
     </div>
 </body>

@@ -14,24 +14,23 @@
         </div>
         <div class="chat-window">
             <div id="chat-messages">
+                {% for dado in dados %}
                 <div class="chat-message">
-                    <img src="{{ url_for('static', filename='images/user1.jpg') }}" alt="User Photo">
-                    {% for dado in dados %}
+                    <img src="{{ url_for('static', filename='imagens/foto.jpeg') }}" alt="User Photo">                    
                     <div class="chat-bubble">
-                        <span class="chat-username"> {{dado['User']}} </span>
-                        <p class="chat-text"> {{dado['Mensagem']}} </p>
+                        <span class="chat-username">{{dado['User']}}</span>
+                        <p class="chat-text">{{dado['Mensagem']}}</p>
                         <span class="chat-time">10:30 AM</span>                       
-                    </div>                   
-                    {% endfor %}
+                    </div>                                       
                 </div>
+                {% endfor %}
             </div>
             <form action="/enviar_messagem" method="POST">                     
                 <div class="chat-input">
-                    <input name='message' type="text" placeholder="Digite uma messagem">
-                    <button type="submit">Enviar</button>
+                    <input name='message' type="text" placeholder="Digite uma mensagem">
+                    <button class='enviar' type="submit">Enviar</button>
                 </div>    
             </form>
-
         </div>
     </div>
 </body>
