@@ -19,15 +19,15 @@ def login():
     linha = load_excel[load_excel['User'] == user]
   
     if verificar_user:
-        if not linha.empty:
-            linha_gmail = linha.iloc[0]['Gmail']
-            linha_password = linha.iloc[0]['Password']
-            print(password)
-            print(linha_password)
-            if password == linha_password:
-                print('teste', linha_password)
-                print('teset', password)
-                return render_template('chat.html')
+        linha_gmail = linha.iloc[0]['Gmail']
+        linha_password = linha.iloc[0]['Password']
+        linha_password = str(password)
+        print(password)
+        print(linha_password)
+        if password == linha_password:
+            print('teste', linha_password)
+            print('teset', password)
+            return render_template('chat.html')
 
     return render_template('login.html')
 
