@@ -14,21 +14,23 @@
         </div>
         <div class="chat-window">
             <div id="chat-messages">
-                <!-- Example of chat message -->
                 <div class="chat-message">
                     <img src="{{ url_for('static', filename='images/user1.jpg') }}" alt="User Photo">
+                    
                     <div class="chat-bubble">
-                        <span class="chat-username"> {{username}} </span>
-                        <p class="chat-text">Hello, how are you?</p>
+                        <span class="chat-username"> username </span>
+                        <p class="chat-text"> message </p>
                         <span class="chat-time">10:30 AM</span>
-                    </div>
-                </div>
+                    </div>                    
+                </div><br>
+            </div>
+            <form action="/enviar_messagem" method="POST">                     
+                <div class="chat-input">
+                    <input name='message' type="text" placeholder="Digite uma messagem">
+                    <button type="submit">Enviar</button>
+                </div>    
+            </form>
 
-            </div>
-            <div class="chat-input">
-                <input type="text" placeholder="Type your message...">
-                <button type="submit">Send</button>
-            </div>
         </div>
     </div>
 </body>

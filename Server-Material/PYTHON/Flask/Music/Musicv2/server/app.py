@@ -44,6 +44,7 @@ def add_music():
 
     return jsonify({"message": "Música adicionada com sucesso!"})
 
+
 # Nova rota para processar o clique dos botões 
 @app.route('/trigger_function', methods=['POST'])
 def trigger_function():
