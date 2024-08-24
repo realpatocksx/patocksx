@@ -20,8 +20,9 @@ def login():
   
     if verificar_user:
         if not linha.empty:
-            gmail = linha.iloc[0]['Gmail']
-            password = linha.iloc[0]['Password']
+            linha_gmail = linha.iloc[0]['Gmail']
+            linha_password = linha.iloc[0]['Password']
+            
             return render_template('chat.html')
 
     return render_template('login.html')
