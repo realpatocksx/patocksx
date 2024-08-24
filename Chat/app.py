@@ -22,8 +22,12 @@ def login():
         if not linha.empty:
             linha_gmail = linha.iloc[0]['Gmail']
             linha_password = linha.iloc[0]['Password']
-            
-            return render_template('chat.html')
+            print(password)
+            print(linha_password)
+            if password == linha_password:
+                print('teste', linha_password)
+                print('teset', password)
+                return render_template('chat.html')
 
     return render_template('login.html')
 
