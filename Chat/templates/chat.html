@@ -16,13 +16,14 @@
             <div id="chat-messages">
                 <div class="chat-message">
                     <img src="{{ url_for('static', filename='images/user1.jpg') }}" alt="User Photo">
-                    
+                    {% for dado in dados %}
                     <div class="chat-bubble">
-                        <span class="chat-username"> username </span>
-                        <p class="chat-text"> message </p>
-                        <span class="chat-time">10:30 AM</span>
-                    </div>                    
-                </div><br>
+                        <span class="chat-username"> {{dado['User']}} </span>
+                        <p class="chat-text"> {{dado['Mensagem']}} </p>
+                        <span class="chat-time">10:30 AM</span>                       
+                    </div>                   
+                    {% endfor %}
+                </div>
             </div>
             <form action="/enviar_messagem" method="POST">                     
                 <div class="chat-input">

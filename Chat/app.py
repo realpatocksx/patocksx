@@ -1,8 +1,10 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, jsonify
 import os, pandas as pd
 
 app = Flask(__name__)
 global user
+caminho_excel_registros = 'Chat/static/data/registros.xlsx'
+caminho_excel_mensagens = 'Chat/static/data/mensagens.xlsx'
 
 @app.route('/')
 def inicio():
@@ -52,8 +54,6 @@ def register():
 def chat():
     return render_template('chat.html')
 
-caminho_excel_registros = 'Chat/static/data/registros.xlsx'
-caminho_excel_mensagens = 'Chat/static/data/mensagens.xlsx'
 def excel():
     if os.path.exists(caminho_excel_registros): 
         load_excel = pd.read_excel(caminho_excel_registros, engine="openpyxl")
@@ -99,7 +99,11 @@ def enviar_messagem():
 
     load_excel_mensagens = pd.concat([load_excel_mensagens, pd.DataFrame([add_mensagens])], ignore_index=False)
     load_excel_mensagens.to_excel(caminho_excel_mensagens, index=False, engine='openpyxl')
-    return render_template('chat.html')
+
+    load_excel_mensagens = pd.read_excel(caminho_excel_mensagens)
+    dados = load_excel_mensagens.to_dict(orient='records')
+    print(dados)
+    return render_template('chat.html',dados=dados)
 
 
 if __name__ == '__main__':
