@@ -1,0 +1,104 @@
+Você pode criar um dicionário chamado dados, 
+onde cada chave será o nome da pessoa, e o valor será outro 
+dicionário contendo as informações dessa pessoa, como nome completo, idade, estado civil e renda.
+
+Aqui está um exemplo:
+
+dados = {
+    "joao": {
+        "nome_completo": "João Silva",
+        "idade": 30,
+        "status_civil": "solteiro",
+        "renda": 3000.00
+    },
+    "maria": {
+        "nome_completo": "Maria Souza",
+        "idade": 28,
+        "status_civil": "casada",
+        "renda": 4500.00
+    },
+    "pedro": {
+        "nome_completo": "Pedro Alves",
+        "idade": 35,
+        "status_civil": "divorciado",
+        "renda": 5000.00
+    }
+}
+
+Acessando as informações
+
+Você pode acessar as informações de uma pessoa facilmente, usando o nome da pessoa como chave:
+
+# Acessar dados da Maria
+print(dados["maria"]["nome_completo"])  # Saída: Maria Souza
+print(dados["maria"]["idade"])          # Saída: 28
+print(dados["maria"]["status_civil"])   # Saída: casada
+print(dados["maria"]["renda"])          # Saída: 4500.00
+
+Adicionando uma nova pessoa
+
+Se você quiser adicionar uma nova pessoa ao dicionário dados, é só fazer assim:
+
+dados["ana"] = {
+    "nome_completo": "Ana Pereira",
+    "idade": 22,
+    "status_civil": "solteira",
+    "renda": 3200.00
+}
+
+Iterando sobre as pessoas
+
+Você pode percorrer o dicionário para acessar as informações de cada pessoa:
+
+for nome, info in dados.items():
+    print(f"Informações de {nome.capitalize()}:")
+    print(f"Nome completo: {info['nome_completo']}")
+    print(f"Idade: {info['idade']}")
+    print(f"Status civil: {info['status_civil']}")
+    print(f"Renda: {info['renda']}")
+    print()
+
+Exemplo completo:
+
+dados = {
+    "joao": {
+        "nome_completo": "João Silva",
+        "idade": 30,
+        "status_civil": "solteiro",
+        "renda": 3000.00
+    },
+    "maria": {
+        "nome_completo": "Maria Souza",
+        "idade": 28,
+        "status_civil": "casada",
+        "renda": 4500.00
+    },
+    "pedro": {
+        "nome_completo": "Pedro Alves",
+        "idade": 35,
+        "status_civil": "divorciado",
+        "renda": 5000.00
+    }
+}
+
+# Acessar dados da Maria
+print(dados["maria"]["nome_completo"])  # Maria Souza
+
+# Adicionar uma nova pessoa
+dados["ana"] = {
+    "nome_completo": "Ana Pereira",
+    "idade": 22,
+    "status_civil": "solteira",
+    "renda": 3200.00
+}
+
+# Iterar sobre os dados
+for nome, info in dados.items():
+    print(f"Informações de {nome.capitalize()}:")
+    print(f"Nome completo: {info['nome_completo']}")
+    print(f"Idade: {info['idade']}")
+    print(f"Status civil: {info['status_civil']}")
+    print(f"Renda: {info['renda']}")
+    print()
+Esse código irá mostrar as informações de cada pessoa no dicionário dados.
+
