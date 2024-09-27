@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='imagens/favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='login/styles.css') }}">
+    <link rel="stylesheet" href="styles.css">
+    <title>Login Eletiva Sedu</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <img class="logo" src="{{ url_for('static', filename='imagens/logo.png') }}" alt="Eletiva Sedu">
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="card">
+            <h1>Login</h1>
+            <p style="text-align:center; padding-bottom: 15px;">Que bom em ter ve aqui de volta!.</p>
+            <form id="loginForm" action="{{ url_for('main') }}" method="post" onsubmit="return validateForm()">
+                <label for="user">Nome de Usuario:</label>
+                <input type="text" name="user" id="user" placeholder="Nome de usuario">
+                <div id="error-message-user" style="color: red;"></div> 
+                <label for="senha">Senha:</label>
+                <input type="password" name="senha" id="senha" placeholder="Senha">
+                <div id="error-message-senha" style="color: red;"></div> <br>
+
+                <span>
+                    <p>Ainda não tem conta? <a href="{{ url_for('cadastro')}}">Acessar Aqui</a></p>
+                    <p>Vishhh, Esqueceu a senha? <a href="rlogin.html">Acessar Aqui</a> </p>
+                    <p>Quer saber mais sobre o site, ou sua política? <a href="sobre.html">Acessar Aqui</a></p>                    
+                </span> <br> <br> 
+                <br><br><div class="button-container">
+                    <button type="submit" onclick="validateForm()">Entrar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>DESENVOLVIDOR POR PHZNNKS</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='login/scripts.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='imagens/favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='secao/styles.css') }}">
+    <link rel="stylesheet" href="styles.css">
+    <title>Eletiva Sedu Titulo</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <img class="logo" src="{{ url_for('static', filename='imagens/logo.png') }}" alt="Imagem da Eletiva">
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="card">
+            <img class="capa" src="{{ url_for('static', filename='imagens/capa.jpeg') }}" alt="Imagem da eletiva">
+            <h2> Titulo </h2>
+            <p> Descrição exr architecto, ipsum similique voluptas veritahenrique Pedrocastro sequi veniam corrupti vero rem quia unde? Explicabo pariatur ipsum consectetur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio incidunt, recusandae impedit eligendi magni facilis, explicabo velit excepturi, perspiciatis asperiores enim sit id fuga laboriosam sint labore facere quod. exr architecto, ipsum similique voluptas veritahenrique Pedrocastro sequi veniam corrupti v exr architecto, ipsum similique voluptas veritahenrique Pedrocastro sequi veniam corrupti v Voluptatem fajhjgsddga abgbgjdhsa auyugd lorem e o carai e pai e picar toma cu fila seu fela.</p> <br>
+            <div class="container-video">
+                <iframe width="100%" height="365" src="https://www.youtube.com/embed/seu-video-aqui" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="button-container">
+                <button id="acessar" class="acessar" type="button">Inscreve-se</button>
+            </div> <br>
+            <!--
+            <div id="formulario" style="display: none;">
+                <form action="/" method="POST" class="formulario">
+                    <label for="nome" class="label">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" class="input-text">
+                    <label for="turno" class="label">Escolha Seu Turno:</label>
+                    <select id="turno" name="turno" class="select-text">
+                        <option value="dia">Dia</option>
+                        <option value="tarde">Tarde</option>
+                        <option value="noite">Noite</option>
+                    </select> <br>
+                    <div class="button-container">
+                        <button class="enviar" type="submit">Enviar Inscricoes</button><br>
+                    </div>
+                </form>
+            </div>-->
+        </section>
+    </main>
+    
+    <footer>
+        <p>DESENVOLVIDOR POR PHZNNKS/PATOCKSX</p>
+    </footer>
+
+    <script>
+        function mostrarFormulario() {
+            document.querySelector('.acessar').style.display = "none";
+            document.getElementById("formulario").style.display = "block";
+        }
+    </script>
+</body>
+</html> 
