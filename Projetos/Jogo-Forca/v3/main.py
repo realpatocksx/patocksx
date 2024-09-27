@@ -28,7 +28,18 @@ def forca():
         print('Voce nao escolheu nenhuma das opcoes acima, logo o jogo foi encerrado!')
         acerta = False
 
+
     while acerta:
+        print(palavra)
+        tentativa = str(input('Digite a letra que voce acha que tem na palavra/frase: '))
+
+        for letra in palavra:
+            if letra == tentativa: 
+                print(f'sim tem a  letra {tentativa}, a frase e {palavra}')
+            else: print(f'nao tem a letra {tentativa}')
+            
+
+    '''while acerta:
         tentativa = str(input('Digite a palavra que acha que é: '))
         if tentativa == palavra:
             print(f'Sucesso voce acertou, a palavra era {palavra}')
@@ -42,7 +53,7 @@ def forca():
                 print('Jogo sendo fechado')
                 acerta = False
         else:
-            print('Voce errou! mas tem mais tentativas.')
+            print('Voce errou! mas tem mais tentativas.')'''
             
 forca()
 
