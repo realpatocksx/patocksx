@@ -1,8 +1,9 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash
 import os
 import pandas as pd
 
 app = Flask(__name__)
+app.secret_key = 'admin2025'
 global user
 caminho_excel_registros = 'Chat/static/data/registros.xlsx'
 caminho_excel_mensagens = 'Chat/static/data/mensagens.xlsx'
@@ -37,19 +38,26 @@ def login():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     excel()
+    add_registro = {}
     load_excel = pd.read_excel(caminho_excel_registros, engine="openpyxl")
 
     if request.method == 'POST':
-        user = request.form.get('username')
-        gmail = request.form.get('email')
-        password = request.form.get('password')
-
-        add_registro = {
-            'User': user,
-            'Gmail': gmail,
-            'Password': password
-        }
-
+        user = request.form.get('username').strip()
+        for letra in user:
+            if letra in [' ', '.', ',', '@', '#', '*', '/', '\,', '|', '?', '$', '', '%']:
+                return render_template('register.html')        
+        if not user: 
+            return render_template('register.html')
+        elif len(user) < 5: 
+            return render_template('register.html')
+        elif len(user) > 12:
+            return render_template('register.html')
+        else: 
+            print('sim False',user)
+            add_registro = {'User': user}
+        gmail = request.form.get('email').strip()
+        password = request.form.get('password').strip()
+        
         load_excel = pd.concat([load_excel, pd.DataFrame([add_registro])], ignore_index=True)
         load_excel.to_excel(caminho_excel_registros, index=False, engine='openpyxl')
         return redirect(url_for('login'))
