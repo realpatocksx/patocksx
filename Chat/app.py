@@ -71,7 +71,7 @@ def register():
 
         passwordconfim = request.form.get('passwordconfirm')
         if not password == passwordconfim:
-            return render_template('register.html')
+             return render_template('register.html')
         
         add_registro = {
             'User': user,
