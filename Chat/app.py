@@ -53,11 +53,31 @@ def register():
         elif len(user) > 12:
             return render_template('register.html')
         else: 
-            print('sim False',user)
-            add_registro = {'User': user}
+            user = user
+
         gmail = request.form.get('email').strip()
+       
         password = request.form.get('password').strip()
+        if not password:
+            return render_template('register.html')
+        elif len(password) < 5:
+            return render_template('register.html')
+        elif len(password) > 12:
+            return render_template('register.html')
+        elif password == user:
+            return render_template('register.html')
+        else: 
+            password = password
+
+        passwordconfim = request.form.get('passwordconfirm')
+        if not password == passwordconfim:
+            return render_template('register.html')
         
+        add_registro = {
+            'User': user,
+            'Password': password
+        }
+
         load_excel = pd.concat([load_excel, pd.DataFrame([add_registro])], ignore_index=True)
         load_excel.to_excel(caminho_excel_registros, index=False, engine='openpyxl')
         return redirect(url_for('login'))
