@@ -5,6 +5,9 @@ import pandas as pd
 app = Flask(__name__)
 app.secret_key = 'admin2025'
 global user
+global gamil
+global password
+
 caminho_excel_registros = 'Chat/static/data/registros.xlsx'
 caminho_excel_mensagens = 'Chat/static/data/mensagens.xlsx'
 
@@ -56,7 +59,10 @@ def register():
             user = user
 
         gmail = request.form.get('email').strip()
-       
+        if not gmail:
+            gmail = 'Nao Informado'
+            add_registro = {'Gmail': gmail}
+
         password = request.form.get('password').strip()
         if not password:
             return render_template('register.html')
@@ -73,13 +79,24 @@ def register():
         if not password == passwordconfim:
              return render_template('register.html')
         
-        add_registro = {
-            'User': user,
-            'Password': password
-        }
+        registros = load_excel.to_dict(orient='records')
+        for usuario in registros:
+            if user in usuario['User']:
+                print(f'O nome de usuario:{user}, ja existe!')
+                return render_template('register.html')
+            else:
+                add_registro = {
+                    'User': user,
+                    'Gmail': gmail,
+                    'Password': password
+                }
 
-        load_excel = pd.concat([load_excel, pd.DataFrame([add_registro])], ignore_index=True)
-        load_excel.to_excel(caminho_excel_registros, index=False, engine='openpyxl')
+                load_excel = pd.concat([load_excel, pd.DataFrame([add_registro])], ignore_index=True)
+                load_excel.to_excel(caminho_excel_registros, index=False, engine='openpyxl')
+                #mexe nisso celular esta descarrehgando, nao ta funcionando, mesmo ja a pessoa 
+                #estive no excel ele criar testa eclaria a mente hehehehe
+                return render_template('login.html')
+
         return redirect(url_for('login'))
 
     return render_template('register.html')
