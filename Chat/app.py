@@ -3,6 +3,7 @@ import os
 import pandas as pd
 
 app = Flask(__name__)
+app.secret_key = 'admin1230270225'
 global user
 global gamil
 global password
@@ -48,9 +49,13 @@ def register():
         if not user: 
             return render_template('register.html')
         elif len(user) < 5: 
-            return render_template('register.html')
+            #return render_template('register.html')
+            flash(f'O nome de usuario tem menos que 5 caracteres!', 'user')
+        
         elif len(user) > 12:
+            flash(f'O nome de usuario tem mais que 12 caracteres!', 'user')
             return render_template('register.html')
+            
         else: 
             user = user
 
