@@ -84,8 +84,8 @@ def register():
             return render_template('register.html')
         else:
             add_registro = {
-                'User': user,
-                'Gmail': gmail,
+                'User': user.lower(),
+                'Gmail': gmail.lower(),
                 'Password': password
             }
 
