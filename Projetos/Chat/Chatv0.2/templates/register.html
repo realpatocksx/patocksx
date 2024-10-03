@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='auth.css') }}">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-form">
+            <h2>Registro</h2>
+            <form action="/register" method="POST">
+                <div class="input-group">
+                    <label for="name">Nome</label>
+                    <input class="inputuser" type="text" id="name" name="username" placeholder="Digite seu nome">
+                </div>
+                <div class="input-group">
+                    <label for="email">Gmail</label>
+                    <input class="inputgmail" type="email" id="email" name="email" placeholder="Opcional">
+                </div>
+                <div class="input-group">
+                    <label for="password">Senha</label>
+                    <input class="inputpassword" type="password" id="password" name="password" placeholder="Digite sua senha">
+                </div>
+                <div class="input-group">
+                    <label for="passwordconfirm">Confirmar Senha</label>
+                    <input class="inputpasswordconfirm type="password" id="passwordconfirm" name="passwordconfirm" placeholder="Confirme sua senha">
+                </div>
+                <button type="submit">Cadastrar</button>
+            </form>
+            <p class="auth-link">Já tem uma conta? <a href="/login">Faça login</a></p>
+        </div>
+    </div>
+</body>
+</html>
