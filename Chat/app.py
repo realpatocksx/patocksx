@@ -98,11 +98,9 @@ def register():
 
 @app.route('/chat')
 def chat():
-    # Carrega as mensagens do Excel para exibir na página de chat
     load_excel_mensagens = pd.read_excel(caminho_excel_mensagens, engine='openpyxl')
     dados = load_excel_mensagens.to_dict(orient='records')
 
-    # Renderiza a página de chat com as mensagens carregadas
     return render_template('chat.html', dados=dados)
 
 
