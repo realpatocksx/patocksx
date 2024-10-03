@@ -69,7 +69,7 @@ def register():
         elif password == user:
             return render_template('register.html')
         else: 
-            password = password
+            password = password.lower()
 
         passwordconfim = request.form.get('passwordconfirm')
         if not password == passwordconfim:
