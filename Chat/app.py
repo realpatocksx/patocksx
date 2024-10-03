@@ -3,7 +3,6 @@ import os
 import pandas as pd
 
 app = Flask(__name__)
-app.secret_key = 'admin2025'
 global user
 global gamil
 global password
@@ -19,22 +18,19 @@ def inicio():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    excel()  # Certifique-se de que os arquivos Excel existem
+    excel()  
     load_excel = pd.read_excel(caminho_excel_registros, engine="openpyxl")
     global user
 
     if request.method == 'POST':
         user = request.form.get('username')
         password = request.form.get('password')
-        verificar_user = user in load_excel['User'].values
-        linha = load_excel[load_excel['User'] == user]
-
-        if verificar_user:
+        for user in load_excel['User'].values:
+            linha = load_excel[load_excel['User'] == user]
             linha_password = str(linha.iloc[0]['Password'])
             if password == linha_password:
                 # Carrega as mensagens ao acessar o chat
                 return redirect(url_for('chat'))
-
     return render_template('login.html')
 
 
