@@ -79,25 +79,19 @@ def register():
         if not password == passwordconfim:
              return render_template('register.html')
         
-        registros = load_excel.to_dict(orient='records')
-        for usuario in registros:
-            if user in usuario['User']:
-                print(f'O nome de usuario:{user}, ja existe!')
-                return render_template('register.html')
-            else:
-                add_registro = {
-                    'User': user,
-                    'Gmail': gmail,
-                    'Password': password
-                }
+        if user in load_excel['User'].values:
+            print(f'O nome de usuario: {user}, ja existe!')
+            return render_template('register.html')
+        else:
+            add_registro = {
+                'User': user,
+                'Gmail': gmail,
+                'Password': password
+            }
 
-                load_excel = pd.concat([load_excel, pd.DataFrame([add_registro])], ignore_index=True)
-                load_excel.to_excel(caminho_excel_registros, index=False, engine='openpyxl')
-                #mexe nisso celular esta descarrehgando, nao ta funcionando, mesmo ja a pessoa 
-                #estive no excel ele criar testa eclaria a mente hehehehe
-                return render_template('login.html')
-
-        return redirect(url_for('login'))
+            load_excel = pd.concat([load_excel, pd.DataFrame([add_registro])], ignore_index=True)
+            load_excel.to_excel(caminho_excel_registros, index=False, engine='openpyxl')
+            return render_template('login.html')
 
     return render_template('register.html')
 
