@@ -1,4 +1,4 @@
-ATUALIZACOES: VERSION: v0.2 - Chat RedDucksx
+ATUALIZACOES: VERSION: v0.2.1 - Chat RedDucksx
 
 atualizacoes na tela de registros, adicionando verificaçoes como, minino de caractere, maximo de
 caractere em senhas e user, o gmail agora e opcional, e no excel e salvo como 'Nao Informado', 
