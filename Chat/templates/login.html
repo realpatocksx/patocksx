@@ -14,10 +14,25 @@
                 <div class="input-group">
                     <label for="user">Nome De Usuario</label>
                     <input type="'text" name="username" placeholder="Digite seu usuario">
+                    {% with messages = get_flashed_messages(with_categories=True) %}
+                    {% for category, message in messages %}
+                        {% if category == 'user' %}
+                            <p class="error">{{ message }}</p>
+                        {% endif %}
+                    {% endfor %}
+                {% endwith %}
                 </div>
                 <div class="input-group">
                     <label for="password">Senha</label>
-                    <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+                    <input type="password" id="password" name="password" placeholder="Digite sua senha">
+                    {% with messages = get_flashed_messages(with_categories=True) %}
+                    {% for category, message in messages %}
+                        {% if category == 'password' %}
+                            <p class="error">{{ message }}</p>
+                        {% endif %}
+                    {% endfor %}
+                {% endwith %}
+
                 </div>
                 <button type="submit">Entrar</button>
             </form>

@@ -24,14 +24,23 @@ def login():
     global user
 
     if request.method == 'POST':
-        user = request.form.get('username')
+        user = request.form.get('username').strip()
+        if not user:
+            flash('O Nome de Usuario nao pode ficar vazio!', 'user')
+            return render_template('login.html')
         password = request.form.get('password')
-        for user in load_excel['User'].values:
-            linha = load_excel[load_excel['User'] == user]
-            linha_password = str(linha.iloc[0]['Password'])
-            if password == linha_password:
-                # Carrega as mensagens ao acessar o chat
-                return redirect(url_for('chat'))
+        if not password:
+            flash('A Senha nao pode ficar vazia!', 'password')
+        else:
+            for user in load_excel['User'].values:
+                linha = load_excel[load_excel['User'] == user.lower()]
+                linha_password = str(linha.iloc[0]['Password'])
+                if password == linha_password:
+                    # Carrega as mensagens ao acessar o chat
+                    return redirect(url_for('chat'))
+                else: 
+                    flash('Nome de Usuario ou Senha invalido!','password')
+                    return render_template('login.html')
     return render_template('login.html')
 
 
