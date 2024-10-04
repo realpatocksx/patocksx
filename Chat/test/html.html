@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Chat</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Buscar Usuários</h2>
+            <input type="text" id="searchInput" placeholder="Digite o nome do usuário..." onkeyup="filterUsers()">
+            <div id="userList">
+                <div class="user">
+                    <img src="foto.jpeg" alt="Usuário 1" class="userPhoto">
+                    <span>Usuário 1</span>
+                    <span>Status: Online</span>
+                    <button class="botao">Adicionar</button>
+                </div>
+                <div class="user">
+                    <img src="foto.jpeg" alt="Usuário 2" class="userPhoto">
+                    <span>Usuário 2</span>
+                    <span>Status: Offline</span>
+                    <button class="botao">Adicionar</button>
+                </div>
+                <div class="user">
+                    <img src="foto.jpeg" alt="Usuário 3" class="userPhoto">
+                    <span>Usuário 3</span>
+                    <span>Status: Online</span>
+                    <button class="botao">Adicionar</button>
+                </div>
+                <div class="user">
+                    <img src="foto.jpeg" alt="Usuário 4" class="userPhoto">
+                    <span>Usuário 4</span>
+                    <span>Status: Offline</span>
+                    <button class="botao">Adicionar</button>
+                </div>
+            </div>
+            
+            <h2>Solicitações de Amizade</h2>
+            <div id="friendRequests">
+                <div class="request">
+                    <img src="foto.jpeg" alt="Usuário 5" class="userPhoto">
+                    <span>Usuário 5</span>
+                    <button class="botao">Aceitar</button>
+                    <button class="botao">Recusar</button>
+                </div>
+            </div>
+
+            <h2>Amizades</h2>
+            <div id="friendList">
+                <div class="friend" onclick="selectContact('Usuário 4')">
+                    <img src="foto.jpeg" alt="Usuário 4" class="userPhoto">
+                    <span>Usuário 4</span>
+                </div>
+            </div>
+        </aside>
+        
+        <main class="chat-area">
+            <div id="contactInfo">
+                <img src="foto.jpeg" alt="Foto do Usuário 4" id="contactPhoto">
+                <div class="contactDetails">
+                    <h3>Usuário 4</h3>
+                </div>
+                <img src="foto.jpeg" alt="Configurações" class="settingsIcon" onclick="openSettings()">
+            </div>
+            <div id="chatWindow">
+                <div class="message sent">
+                    <span>Eu: Olá!</span>
+                </div>
+                <div class="message received" onclick="deleteMessage(this)">
+                    <span>Usuário 4: Oi!</span>
+                </div>
+            </div>
+            <div class="message-input">
+                <textarea placeholder="Digite sua mensagem..." id="messageInput"></textarea>
+                <button class="send">Enviar</button>
+                <label for="imageUpload" class="uploadIcon">📷</label>
+                <input type="file" id="imageUpload" accept="image/*" style="display:none;">
+                <label for="audioUpload" class="uploadIcon">🎤</label>
+                <input type="file" id="audioUpload" accept="audio/*" style="display:none;">
+            </div>
+        </main>
+        
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById("messageInput").addEventListener("keypress", function (e) {
+            if (e.key === "Enter" && !e.shiftKey) {
+                e.preventDefault(); // Impede a quebra de linha
+                document.querySelector('.send').click(); // Simula o clique no botão Enviar
+            }
+        });
+    </script>
+</body>
+</html>  
