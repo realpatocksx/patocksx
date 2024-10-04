@@ -47,17 +47,19 @@ def register():
             if letra in [' ', '.', ',', '@', '#', '*', '/', '\,', '|', '?', '$', '', '%']:
                 return render_template('register.html')        
         if not user: 
+            flash('O Nome de Usuario nao pode ficar vazio!', 'user')
             return render_template('register.html')
+        
         elif len(user) < 5: 
-            #return render_template('register.html')
-            flash(f'O nome de usuario tem menos que 5 caracteres!', 'user')
+            flash('O Nome de Usuario nao pode conter menos que 5 caracteres!', 'user')
+            return render_template('register.html') 
         
         elif len(user) > 12:
-            flash(f'O nome de usuario tem mais que 12 caracteres!', 'user')
+            flash('O Nome de Usuario nao pode conter mais que 12 caracteres!', 'user')
             return render_template('register.html')
             
         else: 
-            user = user
+            user = user#descobrir o motivo que eu criei isso!, nao tem logica aprincipio.
 
         gmail = request.form.get('email').strip()
         if not gmail:
@@ -66,22 +68,27 @@ def register():
 
         password = request.form.get('password').strip()
         if not password:
+            flash('A Senha nao pode ficar vazia!','password')
             return render_template('register.html')
         elif len(password) < 5:
+            flash('A Senha nao pode conter menos que 5 caracteres!', 'password')
             return render_template('register.html')
         elif len(password) > 12:
+            flash('A Senha nao pode conter mais que 5 caracteres!', 'password')
             return render_template('register.html')
         elif password == user:
+            flash('A Senha nao poder ser igual o nome de Usuario!', 'password')
             return render_template('register.html')
         else: 
             password = password.lower()
 
         passwordconfim = request.form.get('passwordconfirm')
         if not password == passwordconfim:
+             flash('A Senha nao e a mesma de cima!', 'password_confirm')
              return render_template('register.html')
         
         if user in load_excel['User'].values:
-            print(f'O nome de usuario: {user}, ja existe!')
+            flash('O Nome de Usuario ja existe!', 'user')
             return render_template('register.html')
         else:
             add_registro = {
