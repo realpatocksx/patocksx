@@ -10,6 +10,10 @@ body {
     height: 100vh;
 }
 
+.status {
+    text-align: center;
+}
+
 .sidebar {
     width: 30%;
     background-color: #1E1E1E;
