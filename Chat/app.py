@@ -1,12 +1,15 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
-import os
+import os, random
 import pandas as pd
 
 app = Flask(__name__)
 app.secret_key = 'admin1230270225'
+
 global user
-global gamil
-global password
+
+global gamil #ve o codigo pois acho que nao preciso mmas 
+global password# ve o codigo pois acho que nao preciso mmas 
+
 
 caminho_excel_registros = 'Chat/static/data/registros.xlsx'
 caminho_excel_mensagens = 'Chat/static/data/mensagens.xlsx'
@@ -47,6 +50,7 @@ def login():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     excel()
+    id()
     add_registro = {}
     load_excel = pd.read_excel(caminho_excel_registros, engine="openpyxl")
 
@@ -103,7 +107,8 @@ def register():
             add_registro = {
                 'User': user.lower(),
                 'Gmail': gmail.lower(),
-                'Password': password
+                'Password': password,
+                'ID': ID                
             }
 
             load_excel = pd.concat([load_excel, pd.DataFrame([add_registro])], ignore_index=True)
@@ -121,6 +126,25 @@ def chat():
     return render_template('chat.html', dados=dados)
 
 
+def id():
+    global ID
+    load_excel = pd.read_excel(caminho_excel_registros, engine="openpyxl")
+
+    ID = 'id:'
+    quantidade_numero_id = random.randrange(8,13)
+    quantidade_id = 0
+    while quantidade_numero_id > quantidade_id:
+        numero_random = random.randrange(0,11)
+        ID = ID + str(numero_random)
+        quantidade_id += 1
+    ID = 'id:69744101361066'
+    if ID in load_excel['ID'].values:
+        flash('Desculpe: Alguma coisa de errado aconteceu no servidor, tente-se registrar novamente.', 'password_confirm')
+        return render_template('register.html')
+    else:
+        ID = ID
+
+
 def excel():
     if os.path.exists(caminho_excel_registros): 
         load_excel = pd.read_excel(caminho_excel_registros, engine="openpyxl")
@@ -129,7 +153,8 @@ def excel():
         criar_excel_registros = {
             "User": [],
             "Gmail": [],
-            "Password": []
+            "Password": [],
+            "ID": []
         }
 
         load_excel = pd.DataFrame(criar_excel_registros)
