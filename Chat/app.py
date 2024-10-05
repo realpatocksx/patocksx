@@ -137,7 +137,7 @@ def id():
         numero_random = random.randrange(0,11)
         ID = ID + str(numero_random)
         quantidade_id += 1
-    ID = 'id:69744101361066'
+    #ID = 'id:69744101361066'
     if ID in load_excel['ID'].values:
         flash('Desculpe: Alguma coisa de errado aconteceu no servidor, tente-se registrar novamente.', 'password_confirm')
         return render_template('register.html')
