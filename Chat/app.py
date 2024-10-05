@@ -5,7 +5,7 @@ import pandas as pd
 app = Flask(__name__)
 app.secret_key = 'admin1230270225'
 
-global user
+global user #da uma olhada 
 
 global gamil #ve o codigo pois acho que nao preciso mmas 
 global password# ve o codigo pois acho que nao preciso mmas 

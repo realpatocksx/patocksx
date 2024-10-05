@@ -1,10 +1,10 @@
 ATUALIZACOES: VERSION: v0.2.1 - Chat RedDucksx
 
-atualizacoes na tela de registros, adicionando verificaçoes como, minino de caractere, maximo de
-caractere em senhas e user, o gmail agora e opcional, e no excel e salvo como 'Nao Informado', 
-agora tambem verificar se a pessoa colocou espaco, ou ate mesmo se deixa o user ou password
-vazio. Alem disso foi melhorado o sistema de login deixando melhor para entende,e resolvido
-problema de pode ser registrar com o mesmo nome de usuario ja registrado. 
+atualizacoes na parte visual de registro e login, e foi criado um sistema de id, 
+onde o script escolhe um numero de 8 a 12 e criar a quantidade de numero aleatorio que ele escolheu,
+e depois verificar se algun user/usuario ja tem, se tiver ele avisa um erro, e gerando outro id,
+ate ninguem tive esse id, e salvado esse novo id para o novo usuario. 
 
-OBS: na versao v0.2 de Chat RedDucksx ainda nao ah a parte visual, o sistema apenas 
-retorna a mesma, pagina, mas nao mostrara nenhuma mensagem de aviso/erro, ainda!.
+
+OBS: na version v0.2.1 de Chat RedDucksx ainda nao ah otimizacao, pois so vou fazer 
+otimizacao na version v0.2.4 ou v0.2.3!.
