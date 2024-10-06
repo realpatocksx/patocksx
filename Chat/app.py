@@ -17,7 +17,7 @@ caminho_excel_mensagens = 'Chat/static/data/mensagens.xlsx'
 
 @app.route('/')
 def inicio():
-    return redirect(url_for('login'))
+    return redirect(url_for('home'))
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -39,8 +39,8 @@ def login():
                 linha = load_excel[load_excel['User'] == user.lower()]
                 linha_password = str(linha.iloc[0]['Password'])
                 if password == linha_password:
-                    # Carrega as mensagens ao acessar o chat
-                    return redirect(url_for('chat'))
+                    # Carrega as mensagens ao acessar o home
+                    return redirect(url_for('home'))
                 else: 
                     flash('Nome de Usuario ou Senha invalido!','password')
                     return render_template('login.html')
@@ -118,12 +118,12 @@ def register():
     return render_template('register.html')
 
 
-@app.route('/chat')
-def chat():
+@app.route('/home')
+def home():
     load_excel_mensagens = pd.read_excel(caminho_excel_mensagens, engine='openpyxl')
     dados = load_excel_mensagens.to_dict(orient='records')
 
-    return render_template('chat.html', dados=dados)
+    return render_template('home.html', dados=dados)
 
 
 def id():
@@ -193,7 +193,7 @@ def enviar_messagem():
 
     # Recarrega as mensagens após enviar a nova mensagem
     dados = load_excel_mensagens.to_dict(orient='records')
-    return render_template('chat.html', dados=dados)
+    return render_template('home.html', dados=dados)
 
 
 if __name__ == '__main__':

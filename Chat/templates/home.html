@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Chat</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}">
 </head>
 <body>
     <div class="container">
@@ -13,25 +13,25 @@
             <input type="text" id="searchInput" placeholder="Digite o nome do usuário..." onkeyup="filterUsers()">
             <div id="userList">
                 <div class="user">
-                    <img src="foto.jpeg" alt="Usuário 1" class="userPhoto">
+                    <img src="{{ url_for('static', filename='imagens/foto.jpeg')}}" alt="fotouser" class="fotouser">
                     <span>Usuário 1</span>
                     <span>Status: Online</span>
                     <button class="botao">Adicionar</button>
                 </div>
                 <div class="user">
-                    <img src="foto.jpeg" alt="Usuário 2" class="userPhoto">
+                    <img src="{{ url_for('static', filename='imagens/foto.jpeg')}}" alt="Usuário 2" class="fotouser">
                     <span>Usuário 2</span>
                     <span>Status: Offline</span>
                     <button class="botao">Adicionar</button>
                 </div>
                 <div class="user">
-                    <img src="foto.jpeg" alt="Usuário 3" class="userPhoto">
+                    <img src="{{ url_for('static', filename='imagens/foto.jpeg')}}" alt="Usuário 3" class="fotouser">
                     <span>Usuário 3</span>
                     <span>Status: Online</span>
                     <button class="botao">Adicionar</button>
                 </div>
                 <div class="user">
-                    <img src="foto.jpeg" alt="Usuário 4" class="userPhoto">
+                    <img src="{{ url_for('static', filename='imagens/foto.jpeg')}}" alt="Usuário 4" class="fotouser">
                     <span>Usuário 4</span>
                     <span>Status: Offline</span>
                     <button class="botao">Adicionar</button>
@@ -41,7 +41,7 @@
             <h2>Solicitações de Amizade</h2>
             <div id="friendRequests">
                 <div class="request">
-                    <img src="foto.jpeg" alt="Usuário 5" class="userPhoto">
+                    <img src="{{ url_for('static', filename='imagens/foto.jpeg')}}" alt="Usuário 5" class="fotouser">
                     <span>Usuário 5</span>
                     <button class="botao">Aceitar</button>
                     <button class="botao">Recusar</button>
@@ -51,7 +51,7 @@
             <h2>Amizades</h2>
             <div id="friendList">
                 <div class="friend" onclick="selectContact('Usuário 4')">
-                    <img src="foto.jpeg" alt="Usuário 4" class="userPhoto">
+                    <img src="{{ url_for('static', filename='imagens/foto.jpeg')}}" alt="Usuário 4" class="fotouser">
                     <span>Usuário 4</span>
                 </div>
             </div>
@@ -60,19 +60,19 @@
         <p><></p>
         <main class="chat-area">
             <div id="contactInfo">
-                <img src="foto.jpeg" alt="Foto do Usuário 4" id="contactPhoto">
+                <img src="{{ url_for('static', filename='imagens/foto.jpeg')}}" alt="Foto do Usuário 4" id="contatofoto">
                 <div class="contactDetails">
                     <h3>Usuário 4</h3>
                 </div>
-                <img src="foto.jpeg" alt="Configurações" class="settingsIcon" onclick="openSettings()">
+                <img src="{{ url_for('static', filename='imagens/foto.jpeg')}}" alt="Configurações" class="configicon" onclick="openSettings()">
             </div>
             <p class="status">Online</p>
 
             <div id="chatWindow">
-                <div class="message sent">
+                <div class="mensagevoce">
                     <span>Eu: Olá!</span>
                 </div>
-                <div class="message received" onclick="deleteMessage(this)">
+                <div class="mensageuser" onclick="deleteMessage(this)">
                     <span>Usuário 4: Oi!</span>
                 </div>
             </div>
@@ -88,7 +88,7 @@
         
     </div>
 
-    <script src="script.js"></script>
+    <script src="scripts.js"></script>
     <script>
         document.getElementById("messageInput").addEventListener("keypress", function (e) {
             if (e.key === "Enter" && !e.shiftKey) {
@@ -98,4 +98,5 @@
         });
     </script>
 </body>
-</html>  
+</html>
+

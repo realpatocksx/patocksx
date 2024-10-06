@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}">
+    <title>Buscar Usuários</title>
+    <script>
+        function filterUsers() {
+            const input = document.getElementById('searchInput').value;
+            fetch(`/search?query=${input}`)
+                .then(response => response.json())
+                .then(data => {
+                    const userList = document.getElementById('userList');
+                    userList.innerHTML = ''; // Limpa a lista
+
+                    data.forEach(user => {
+                        const userDiv = document.createElement('div');
+                        userDiv.classList.add('user');
+                        userDiv.innerHTML = `
+                            <img src="{{ url_for('static', filename='imagens/foto.jpeg')}}" alt="fotouser" class="fotouser">
+                            <span>${user}</span>
+                            <span>Status: Online</span>
+                            <button class="botao">Adicionar</button>
+                        `;
+                        userList.appendChild(userDiv);
+                    });
+                });
+        }
+    </script>
+</head>
+<body>
+    <h2>Buscar Usuários</h2>
+    <input type="text" id="searchInput" placeholder="Digite o nome do usuário..." onkeyup="filterUsers()">
+    <div id="userList">
+        <!-- Os usuários filtrados serão inseridos aqui -->
+    </div>
+</body>
+</html>

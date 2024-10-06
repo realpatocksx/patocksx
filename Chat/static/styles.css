@@ -50,7 +50,7 @@ input[type="text"] {
     background-color: #7373732d; /* Tom mais claro ao passar o mouse */
 }
 
-.userPhoto {
+.fotouser {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -74,7 +74,7 @@ input[type="text"] {
 }
 
 
-#contactPhoto {
+#contatofoto {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -86,7 +86,7 @@ input[type="text"] {
     flex-direction: column;
 }
 
-.settingsIcon {
+.configicon {
     width: 30px; /* Tamanho da engrenagem */
     height: 30px;
     cursor: pointer;
