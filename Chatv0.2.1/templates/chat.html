@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-sidebar">
+            <button onclick="startGlobalChat()">Global Chat</button>
+            <button onclick="startUserChat()">User Chat</button>
+        </div>
+        <div class="chat-window">
+            <div id="chat-messages">
+                {% for dado in dados %}
+                <div class="chat-message">
+                    <img src="{{ url_for('static', filename='imagens/foto.jpeg') }}" alt="User Photo">                    
+                    <div class="chat-bubble">
+                        <span class="chat-username">{{dado['User']}}</span>
+                        <p class="chat-text">{{dado['Mensagem']}}</p>
+                        <span class="chat-time">10:30 AM</span>                       
+                    </div>                                       
+                </div>
+                {% endfor %}
+            </div>
+            <form action="/enviar_messagem" method="POST">                     
+                <div class="chat-input">
+                    <input name='message' type="text" placeholder="Digite uma mensagem">
+                    <button class='enviar' type="submit">Enviar</button>
+                </div>    
+            </form>
+        </div>
+    </div>
+</body>
+</html>
