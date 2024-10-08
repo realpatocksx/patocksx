@@ -17,7 +17,7 @@ caminho_excel_mensagens = 'Chat/static/data/mensagens.xlsx'
 
 @app.route('/')
 def inicio():
-    return redirect(url_for('home'))
+    return redirect(url_for('login'))
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -35,7 +35,7 @@ def login():
         if not password:
             flash('A Senha nao pode ficar vazia!', 'password')
         else:
-            for user in load_excel['User'].values:
+            if user in load_excel['User'].values:
                 linha = load_excel[load_excel['User'] == user.lower()]
                 linha_password = str(linha.iloc[0]['Password'])
                 if password == linha_password:
@@ -44,6 +44,10 @@ def login():
                 else: 
                     flash('Nome de Usuario ou Senha invalido!','password')
                     return render_template('login.html')
+                    
+            flash('Nome de usuario nao existe!', 'user')
+            return render_template('/register.html')
+
     return render_template('login.html')
 
 
