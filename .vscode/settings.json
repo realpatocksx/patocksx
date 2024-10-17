@@ -11,6 +11,6 @@
     "python.testing.pytestArgs": [
         "Server-Side"
     ],
-    "liveServer.settings.port": 5529,
+    "liveServer.settings.port": 5531,
     "git.ignoreLimitWarning": true
 }

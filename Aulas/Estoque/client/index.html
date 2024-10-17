@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estoque - Visualização e Gerenciamento</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Gestão de Estoque</h1>
+      <button class="btn-add-product">Adicionar Produto</button>
+    </header>
+
+    <div class="product-grid" id="productGrid">
+      <!-- Produtos são renderizados aqui -->
+    </div>
+  </div>
+
+  <!-- Modal para visualização do produto -->
+  <div class="modal" id="productModal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <img id="modalImg" src="foto.jpeg" alt="Imagem do Produto">
+      <h2 id="modalName"></h2>
+      <p id="modalDescription"></p>
+      <strong>Valor: <span id="modalPrice"> 279.99</span></strong>
+      <p>Quantidade: <span id="modalQuantity">1000</span></p>
+    </div>
+  </div>
+
+  <!-- Formulário de gerenciamento de produtos -->
+  <div class="form-container" id="formContainer">
+    <form id="productForm">
+      <h2>Adicionar Produto</h2>
+      <input type="text" id="name" placeholder="Nome do Produto" required>
+      <textarea id="description" placeholder="Descrição do Produto" rows="3" required></textarea>
+      <input type="number" id="price" placeholder="Valor (R$)" required>
+      <input type="number" id="quantity" placeholder="Quantidade em Estoque" required>
+      <input type="url" id="image" placeholder="URL da Imagem do Produto" required>
+      <button type="submit" class="btn-submit">Cadastrar Produto</button>
+    </form>
+  </div>
+
+  <script src="../server/scripts.js"></script>
+</body>
+</html>
+
