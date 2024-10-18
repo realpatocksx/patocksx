@@ -1,9 +1,8 @@
 from flask import Flask, request, render_template, redirect, url_for
 
 app = Flask(__name__)
-app.secret_key = 'xss_test'
 
-usuarios = {'admin': '12345'}  # Dados de login fixos para simular a autenticação
+usuarios = {'admin': '123'}  
 
 @app.route('/', methods=['GET', 'POST'])
 def login():
@@ -12,7 +11,7 @@ def login():
         password = request.form.get('password')
 
         if username in usuarios and usuarios[username] == password:
-            return redirect(url_for('welcome', user=username))  # Redireciona para a página de boas-vindas
+            return redirect(url_for('welcome', user=username))  
         else:
             return redirect(url_for('login_error', user=username))
 
