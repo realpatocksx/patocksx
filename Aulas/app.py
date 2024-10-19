@@ -2,12 +2,15 @@ from flask import Flask, request, render_template, redirect, url_for
 
 app = Flask(__name__)
 
-usuarios = {'admin': '123'}  
+usuarios = {
+    'admin': '123',
+    'pedro': '123456'
+    }  
 
 @app.route('/', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        username = request.form.get('username')
+        username = request.form.get('username')#pedro
         password = request.form.get('password')
 
         if username in usuarios and usuarios[username] == password:
@@ -28,3 +31,7 @@ def login_error():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+
+
