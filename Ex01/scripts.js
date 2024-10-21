@@ -2,6 +2,7 @@
 var noticias = {}
 const botao = document.querySelector('.botao')
 botao.addEventListener('click', function(event){
+    event.preventDefault()
     let nome_noticia = document.querySelector('#nomedanoticia').value
     let categoria_noticia = document.querySelector('#categorianoticia').value
     let descricao_noticia = document.querySelector('#descricaonoticia').value
@@ -13,7 +14,6 @@ botao.addEventListener('click', function(event){
         'Tipo da Categoria: ': categoria_noticia, 
         'Descricao da Noticia: ': descricao_noticia 
     }
-    alert(noticias)
+    console.log(noticias)
 });
-
-alert(noticias)
+console.log(noticias)
