@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 100%;
+    min-width: 0%;
+
+    max-height: 100%;
+    min-height: 0%;
+}
+
+
+h1 {
+    text-align: center;
+}
+
+.main {
+    background-color: rgb(116, 116, 116);
+    display: block;
+    
+}
+
+form {
+    margin:  auto;
+}
+
+input[class='password'], input[class='user'] {
+    border-radius: 35px;
+    width
+    max-width: 100%;
+}
+
