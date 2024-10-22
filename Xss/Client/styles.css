@@ -21,12 +21,12 @@ h1 {
 }
 
 form {
-    margin:  auto;
+    background-color: brown;
+    width: 50%;
+    height: 50%;
 }
 
 input[class='password'], input[class='user'] {
     border-radius: 35px;
-    width
-    max-width: 100%;
 }
 
