@@ -1,24 +1,33 @@
-import random 
-
-
+import uuid
 
 user = 'ph'
-password = 'fss'
+user2 = 'admin'
+user3 = '7f'
 
-global users
-global identificador 
+password = 'admin'
+users = {}
+
+def identificador():
+    return str(uuid.uuid4())
+
 users = {
     user: {
         'User': user,
         'Password': password,
-        'Identificador': identificador
+        'Identificador': identificador()
     },
 
-    'User': {}
+    user2: {
+        'User': user2,
+        'Password': password,
+        'Identificador': identificador()
+    },
+
+    user3: {
+        'User': user3,
+        'Password': password,
+        'Identificador': identificador()
+    },
 }
 
-def identificador():
-    
-    identificador = 'saa'
-    
-print(users)    
+print(users)
