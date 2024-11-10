@@ -1,0 +1,45 @@
+/* Resetando estilos padrões do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Estilo da seção principal */
+section {
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Estilo da caixa que contém cada usuário */
+.box {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    padding: 20px;
+}
+
+/* Estilo do título e das informações */
+.box h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.box span {
+    display: block;
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 5px;
+}
