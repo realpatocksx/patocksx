@@ -1,0 +1,93 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo e fonte */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f7f9fc;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #3498db;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+/* Container para os cards */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 40px;
+    justify-items: center;
+}
+
+/* Estilo para os cards */
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 320px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Efeito de hover nos cards */
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Título do card */
+.card h3 {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Texto do card */
+.card p {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Rótulos (labels) */
+.label {
+    font-weight: 600;
+    color: #3498db;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+}
