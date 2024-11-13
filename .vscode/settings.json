@@ -12,5 +12,6 @@
         "Server-Side"
     ],
     "liveServer.settings.port": 5540,
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "editor.fontSize": 18
 }
