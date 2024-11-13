@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Loja Online - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="logo">Loja Online</div>
+        <input type="text" class="search-bar" placeholder="Buscar produtos...">
+        <div class="icons">
+            <i class="icon-profile"></i>
+            <i class="icon-cart"></i>
+        </div>
+    </header>
+
+    <!-- Menu de Categorias -->
+    <nav class="category-menu">
+        <button>Eletrônicos</button>
+        <button>Moda</button>
+        <button>Livros</button>
+        <!-- Mais categorias -->
+    </nav>
+
+    <!-- Destaques e Promoções -->
+    <section class="highlights">
+        <div class="carousel">
+            <!-- Imagens em carrossel -->
+        </div>
+    </section>
+
+    <!-- Listagem de Produtos -->
+    <section class="product-list">
+        <div class="product-card">
+            <img src="{{ url_for('static', filename='img/produto1.jpg') }}" alt="Produto">
+            <h2>Nome do Produto</h2>
+            <p class="old-price">R$ 199,99</p>
+            <p class="current-price">R$ 149,99</p>
+            <p class="stock">Quantidade disponível: 10</p>
+            <button class="add-to-cart">Adicionar ao Carrinho</button>
+        </div>
+        <!-- Mais produtos -->
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div>Contato: email@lojavirtual.com</div>
+        <div>Redes sociais: [ícones]</div>
+        <div>Links úteis</div>
+    </footer>
+</body>
+</html>

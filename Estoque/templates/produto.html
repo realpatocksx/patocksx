@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/produto.css') }}">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Loja Online</div>
+    </header>
+
+    <main class="product-container">
+        <section class="filter-section">
+            <h2>Filtrar por Categoria</h2>
+            <select>
+                <option value="">Todos</option>
+                <option value="eletronicos">Eletrônicos</option>
+                <option value="moda">Moda</option>
+                <!-- Mais categorias -->
+            </select>
+        </section>
+
+        <section class="product-list">
+            <div class="product-card">
+                <img src="{{ url_for('static', filename='img/produto1.jpg') }}" alt="Produto">
+                <h2>Nome do Produto</h2>
+                <p class="current-price">R$ 149,99</p>
+                <p class="stock">Quantidade disponível: 10</p>
+                <button class="add-to-cart">Adicionar ao Carrinho</button>
+            </div>
+            <!-- Mais produtos -->
+        </section>
+
+        <section class="reviews">
+            <h2>Avaliações</h2>
+            <p>Média: 4.5 estrelas</p>
+            <p>Comentário: "Produto excelente!"</p>
+            <!-- Mais avaliações -->
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div>Contato: email@lojavirtual.com</div>
+        <div>Redes sociais: [ícones]</div>
+    </footer>
+</body>
+</html>

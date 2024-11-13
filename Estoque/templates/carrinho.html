@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/carrinho.css') }}">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Loja Online</div>
+    </header>
+
+    <main class="cart-container">
+        <h2>Seu Carrinho</h2>
+        <div class="cart-item">
+            <img src="{{ url_for('static', filename='img/produto1.jpg') }}" alt="Produto">
+            <div class="item-details">
+                <h3>Nome do Produto</h3>
+                <p>Quantidade: <input type="number" value="1"></p>
+                <p>Preço: R$ 149,99</p>
+                <button class="remove-btn">Remover</button>
+            </div>
+        </div>
+        <!-- Mais itens do carrinho -->
+
+        <div class="cart-total">
+            <h3>Total: R$ 149,99</h3>
+            <button class="checkout-btn">Finalizar Compra</button>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div>Contato: email@lojavirtual.com</div>
+        <div>Redes sociais: [ícones]</div>
+    </footer>
+</body>
+</html>

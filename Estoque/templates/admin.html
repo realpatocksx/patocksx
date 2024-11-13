@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Cadastro de Produto</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Painel Administrativo</div>
+    </header>
+
+    <main class="admin-container">
+        <section class="form-section">
+            <h2>Cadastrar Produto</h2>
+            <form action="#" method="post" class="form">
+                <input type="file" required>
+                <input type="text" placeholder="Nome do Produto" required>
+                <textarea placeholder="Descrição do Produto" required></textarea>
+                <input type="number" placeholder="Preço Antigo" required>
+                <input type="number" placeholder="Preço Atual" required>
+                <input type="number" placeholder="Quantidade em Estoque" required>
+                <select required>
+                    <option value="">Categoria</option>
+                    <option value="eletronicos">Eletrônicos</option>
+                    <option value="moda">Moda</option>
+                    <!-- Mais categorias -->
+                </select>
+                <button type="submit" class="auth-btn">Cadastrar Produto</button>
+            </form>
+        </section>
+
+        <section class="table-section">
+            <h2>Produtos Cadastrados</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Foto</th>
+                        <th>Nome</th>
+                        <th>Preço</th>
+                        <th>Quantidade</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="{{ url_for('static', filename='img/produto1.jpg') }}" alt="Produto"></td>
+                        <td>Produto Exemplo</td>
+                        <td>R$ 149,99</td>
+                        <td>10</td>
+                        <td>
+                            <button class="edit-btn">Editar</button>
+                            <button class="delete-btn">Excluir</button>
+                        </td>
+                    </tr>
+                    <!-- Mais produtos -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div>Contato: email@lojavirtual.com</div>
+        <div>Redes sociais: [ícones]</div>
+    </footer>
+</body>
+</html>
