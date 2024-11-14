@@ -1,0 +1,93 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo básico */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.cart {
+    margin-top: 15px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.cart:hover {
+    color: #00bcd4;
+}
+
+/* Seção de Produtos */
+.products-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+
+}
+
+.product-card {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    width: 100%;
+    max-width: 350px;
+    box-shadow: 0 7px 7px rgba(0, 0, 0, 0.231);
+}
+
+.product-card img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.price {
+    color: green;
+    font-weight: bold;
+}
+
+.buy-button,
+.cart-button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+.buy-button:hover {
+    background-color: #0056b3;
+}
+
+.cart-button {
+    background-color: #28A745;
+}
+
+.cart-button:hover {
+    background-color: #218838;
+}
+
+/* Rodapé */
+.footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
