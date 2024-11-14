@@ -8,6 +8,31 @@
 </head>
 <body>
 
+    <!-- Barra Superior -->
+    <header class="top-bar">
+        <div class="logo">Loja PH</div>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="nav-links">
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar produtos...">
+                <button class="search-button">Buscar</button>
+            </div>
+            <div class="user-actions">
+                <button class="login-button">Login</button>
+                <button class="register-button">Cadastro</button>
+            </div>
+            <div class="categories">
+                <button class="category-button">Categorias</button>
+            </div>
+            <div class="cart">
+                <button class="cart-button">Carrinho</button>
+            </div>
+        </nav>
+    </header>
     <!-- Seção de Produtos -->
     <main class="products-section">
         <!-- Card de Produto -->
@@ -44,6 +69,17 @@
         <p>Desenvolvedores: Equipe X</p>
         <p>Lojas Parceiras: Loja A, Loja B</p>
     </footer>
-
+    <script>
+        // Seleciona o menu toggle e os links de navegação
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+    
+        // Adiciona um evento de clique ao menu toggle
+        menuToggle.addEventListener('click', () => {
+            // Adiciona ou remove a classe 'active' para abrir ou fechar o menu
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
