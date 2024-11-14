@@ -26,11 +26,19 @@ body {
     position: relative;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
-
+/* Quando for a logo de TExto/h1 
 .logo {
     font-size: 26px;
     font-weight: bold;
     color: #f1f1f1;
+}*/
+
+/* Logotipo Responsivo */
+.logo img {
+    height: 40px; /* Ajuste o tamanho conforme necessário */
+    max-width: 100%;
+    object-fit: contain; /* Garante que a imagem não seja cortada */
+    border-radius: 30px;
 }
 
 .menu-toggle {
@@ -246,3 +254,4 @@ body {
     padding: 20px;
     border-top: 1px solid #333;
 }
+
