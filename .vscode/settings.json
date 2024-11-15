@@ -11,7 +11,7 @@
     "python.testing.pytestArgs": [
         "Server-Side"
     ],
-    "liveServer.settings.port": 5546,
+    "liveServer.settings.port": 5547,
     "git.ignoreLimitWarning": true,
     "editor.fontSize": 18
 }

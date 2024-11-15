@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-Br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,6 +35,8 @@
             </div>
         </nav>
     </header>
+
+
     <!-- Seção de Produtos -->
     <main class="products-section">
         <!-- Card de Produto -->
@@ -71,17 +73,15 @@
         <p>Desenvolvedores: Equipe Red DucksX</p>
         <p>Lojas Parceiras: Loja A, Loja B</p>
     </footer>
+
+    <script src="scripts.js"></script>
     <script>
-        // Seleciona o menu toggle e os links de navegação
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-    
-        // Adiciona um evento de clique ao menu toggle
-        menuToggle.addEventListener('click', () => {
-            // Adiciona ou remove a classe 'active' para abrir ou fechar o menu
-            menuToggle.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
+        document.querySelector('.addcart').addEventListener('click', () => {
+            alert('teste2')
+            window.location.href = 'carrinho.html'
+        })
     </script>
 </body>
 </html>
+
+

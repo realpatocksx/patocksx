@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Carrinho de Compras</title>
+  <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+
+
+    <!-- Barra Superior -->
+    <header class="top-bar">
+      <div class="logo">
+          <img src="imagem.jpg" alt="">
+      </div>
+      <div class="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+      </div>
+      <nav class="nav-links">
+          <div class="search-bar">
+              <input type="text" placeholder="Buscar produtos...">
+              <button class="search-button">Buscar</button>
+          </div>
+          <div class="user-actions">
+              <button class="login-button">Login</button>
+              <button class="register-button">Cadastro</button>
+          </div>
+          <div class="categories">
+              <button class="category-button">Categorias</button>
+          </div>
+          <div class="cart">
+              <button id="home" >home</button>
+          </div>
+      </nav>
+  </header>
+
+  <!-- Carrinho de Compras -->
+  <div class="cart-container" id="cart">
+    <h1>Carrinho de Compras</h1>
+
+    <!-- Produto Exemplo -->
+    <div class="cart-item">
+      <img src="imagem.jpg" alt="Produto X">
+      <div class="product-info">
+        <p><strong>Produto X</strong></p>
+        <p class="quantity">Quantidade: <button class="button" onclick="updateQuantity(-1)">-</button> <span id="qty-1">1</span> <button class="button" onclick="updateQuantity(1)">+</button></p>
+        <p class="price">Preço Unitário: R$ 50,00</p>
+        <p class="total-price">Valor Total: R$ 50,00</p>
+      </div>
+      <button class="button" onclick="removeItem()">Remover</button>
+    </div>
+
+    <div class="cart-item">
+      <img src="imagem.jpg" alt="Produto X">
+      <div class="product-info">
+        <p><strong>Produto X</strong></p>
+        <p class="quantity">Quantidade: <button class="button" onclick="updateQuantity(-1)">-</button> <span id="qty-1">1</span> <button class="button" onclick="updateQuantity(1)">+</button></p>
+        <p class="price">Preço Unitário: R$ 50,00</p>
+        <p class="total-price">Valor Total: R$ 50,00</p>
+      </div>
+      <button class="button" onclick="removeItem()">Remover</button>
+    </div>
+
+    <div class="cart-item">
+      <img src="imagem.jpg" alt="Produto X">
+      <div class="product-info">
+        <p><strong>Produto X</strong></p>
+        <p class="quantity">Quantidade: <button class="button" onclick="updateQuantity(-1)">-</button> <span id="qty-1">1</span> <button class="button" onclick="updateQuantity(1)">+</button></p>
+        <p class="price">Preço Unitário: R$ 50,00</p>
+        <p class="total-price">Valor Total: R$ 50,00</p>
+      </div>
+      <button class="button" onclick="removeItem()">Remover</button>
+    </div>
+    <!-- Subtotal e Frete -->
+    <div class="cart-summary">
+      <p>Subtotal: <span id="subtotal">R$ 50,00</span></p>
+      <label for="cep">CEP: </label>
+      <input type="text" id="cep" class="form-input" placeholder="Digite seu CEP">
+      <button class="button" onclick="calculateFreight()">Calcular Frete</button>
+      <p>Frete: R$ <span id="freight">0,00</span></p>
+      <p class="total">Valor Total (com Frete): R$ <span id="total">50,00</span></p>
+    </div>
+
+    <!-- Endereço de Entrega -->
+    <div class="address">
+      <h2>Endereço de Entrega</h2>
+      <input type="text" class="form-input" placeholder="Nome Completo">
+      <input type="text" class="form-input" placeholder="Rua">
+      <input type="text" class="form-input" placeholder="Número">
+      <input type="text" class="form-input" placeholder="Bairro">
+      <input type="text" class="form-input" placeholder="Cidade">
+      <input type="text" class="form-input" placeholder="Estado">
+      <input type="text" class="form-input" placeholder="CEP">
+    </div>
+
+    <!-- Forma de Pagamento -->
+    <div class="payment-method">
+      <h2>Forma de Pagamento</h2>
+      <label><input type="radio" name="payment" value="cartao"> Cartão de Crédito</label> <br>
+      <label><input type="radio" name="payment" value="boleto"> Boleto Bancário</label> <br>
+      <label><input type="radio" name="payment" value="pix"> Pix</label> <br>
+    </div>
+
+    <!-- Finalizar Compra -->
+    <button class="finalize-button">Finalizar Compra</button>
+  </div>
+
+      <!-- Rodapé -->
+    <footer class="footer">
+      <p>Instagram: @minhalojaph</p>
+      <p>Email: phduck@phloja.com</p>
+      <p>Desenvolvedores: Equipe Red DucksX</p>
+      <p>Lojas Parceiras: Loja A, Loja B</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+    <script>
+      document.getElementById('home').addEventListener('click', () => {
+        alert('teste')
+        window.location.href = 'index.html'    
+      })
+    </script>
+</body>
+</html>
+
+
