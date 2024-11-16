@@ -9,7 +9,16 @@ menuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('active');
 });
 
+//Butao Da Categoria
+const clickcategory = document.querySelector('.category-button')
 
-
-
-
+clickcategory.addEventListener('click', () => {
+    clickcategory.innerHTML = `
+        <select id="select">
+            <option value='0'>Destaques</option>
+            <option value="1">Acessorios De Casa</option>
+            <option value="2">Acessorios De Tech</option>
+            <option value="3">Moda Masculina e Feminina</option>
+        </select>
+    `
+})
