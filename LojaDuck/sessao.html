@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Sessão de Produtos</title>
+  <link rel="stylesheet" href="sessao.css">
+</head>
+<body>
+
+  <!-- Barra Superior -->
+  <header class="top-bar">
+    <div class="logo">
+      <img src="imagem.jpg" alt="">
+    </div>
+    <div class="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav class="nav-links">
+      <div class="search-bar">
+        <input type="text" placeholder="Buscar produtos...">
+        <button class="search-button">Buscar</button>
+      </div>
+      <div class="user-actions">
+        <button class="login-button">Login</button>
+        <button class="register-button">Cadastro</button>
+      </div>
+      <div class="categories">
+        <button class="category-button">Categorias</button>
+        <div class="dropdown-menu">
+          <a href="#">Destaques</a>
+          <a href="#">Acessórios De Casa</a>
+          <a href="#">Acessórios De Tech</a>
+          <a href="#">Moda Masculina e Feminina</a>
+        </div>
+      </div>
+      <div class="cart">
+        <button class="addcart">Carrinho</button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container">
+    <!-- Sessão de Produto -->
+    <section class="product-section">
+        <!-- Carrossel de imagens -->
+        <div class="product-carousel">
+            <button class="nav-btn prev-btn">◀</button>
+            <button class="nav-btn next-btn">▶</button>
+        <div class="images-wrapper">
+            <div class="images">
+                <img src="imagem.jpg" alt="Produto 1">
+                <img src="imagem.jpg" alt="Produto 2">
+                <img src="imagem.jpg" alt="Produto 3">
+            </div>
+        </div>
+    </div>
+      </div>
+      <div class="product-info">
+        <h2>Nome do Produto</h2>
+        <p class="description">
+          Descrição curta do produto...
+          <span class="hidden-text" style="display:none;">Texto completo da descrição do produto.</span>
+          <button class="btn-more">Mostrar mais</button>
+        </p>
+        <div class="price">
+          <span class="old-price">R$ 200,00</span>
+          <span class="new-price">R$ 150,00</span>
+        </div>
+        <div class="buttons">
+          <button class="buy-now">Comprar</button>
+          <button class="add-to-cart">
+            <img src="imagem.jpg" alt="Carrinho" class="small-icon">
+          </button>
+          <button class="share">Compartilhar</button>
+          <button class="favorite">
+            <img src="imagem.jpg" alt="Favorito" class="small-icon">
+          </button>
+        </div>
+        <div class="sales-info">
+          <p>Total de Vendas: 120</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Avaliações -->
+    <div class="review-section">
+      <h3>Avaliações (120 comentários)</h3>
+      <form class="review-form">
+        <label for="rating">Avalie com estrelas:</label>
+        <div class="stars">
+          <span class="star" data-value="1">★</span>
+          <span class="star" data-value="2">★</span>
+          <span class="star" data-value="3">★</span>
+          <span class="star" data-value="4">★</span>
+          <span class="star" data-value="5">★</span>
+        </div>
+        <textarea id="review-text" placeholder="Escreva sua avaliação..."></textarea>
+        <input type="file" id="review-photo" accept="image/*">
+        <button type="submit">Enviar Avaliação</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <p>Instagram: @minhalojaph</p>
+    <p>Email: phduck@phloja.com</p>
+    <p>Desenvolvedores: Equipe Red DucksX</p>
+    <p>Lojas Parceiras: Loja A, Loja B</p>
+  </footer>
+
+  <script src="sessao.js"></script>
+</body>
+</html>
