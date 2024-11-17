@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Eletiva Sedu</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="cadastro.css">
+</head>
+<body>
+    <!-- Barra Superior -->
+    <header class="top-bar">
+        <div class="logo">
+            <img src="imagem.jpg" alt="Logotipo">
+        </div>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="nav-links">
+            <div class="user-actions">
+                <button class="login-button">Login</button>
+            </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="mainbox">
+        <section class="box">
+            <h1>Cadastro</h1>
+            <form id="cadastroForm" action="/" method="post">
+                <label for="namecomplet">Nome Completo:</label>
+                <input type="text" name="namecomplet" id="namecomplet" placeholder="Nome Completo">
+                <label for="user">Usuário:</label>
+                <input type="text" name="user" id="user" placeholder="Nome de usuário">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" placeholder="exemplo: nomedoemail@gmail.com">
+                <label for="cargo">Tipo de Cadastro:</label>
+                <select class="cargo" id="cargo" name="cargo">
+                    <option value="cpf">Pessoa Física</option>
+                    <option value="cnpj">Empresarial</option>
+                </select>
+                <label for="senha">Senha:</label>
+                <input type="password" name="senha" id="senha" placeholder="Senha">
+                <p>Lembre-se de criar uma senha segura que você não esqueça!</p>
+                <p>Já tem conta? <a href="/">Acesse aqui</a></p>
+                <p>Quer saber mais sobre o site? <a href="sobre.html">Acesse aqui</a></p>
+            
+            
+            <!-- Botões de login social -->
+
+            <p class="logarformas">Outras Formas de Logar</p>
+            <div class="social-login">
+                <button class="social-btn google-btn">
+                    <img src="imagem.jpg" alt="Google">
+                </button>
+                <button class="social-btn facebook-btn">
+                    <img src="imagem.jpg" alt="Facebook">
+                </button>
+                <button class="social-btn phone-btn">
+                    <img src="imagem.jpg" alt="Celular">
+                </button>
+              </div><br> <br>
+
+                <div class="button-container">
+                    <button class="cadastrar" type="submit">Cadastrar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <p>Instagram: @minhalojaph</p>
+        <p>Email: phduck@phloja.com</p>
+        <p>Desenvolvedores: Equipe Red DucksX</p>
+        <p>Lojas Parceiras: Loja A, Loja B</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+    <script src="cart.js"></script>
+    <script src="login.js"></script>
+    <script src="cadastro.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

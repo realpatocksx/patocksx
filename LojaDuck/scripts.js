@@ -9,16 +9,22 @@ menuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('active');
 });
 
+
+
 //Butao Da Categoria
-const clickcategory = document.querySelector('.category-button')
+const clickcategory = document.querySelector('.category-button');
+const dropdownMenu = document.querySelector('.dropdown-menu');
 
 clickcategory.addEventListener('click', () => {
-    clickcategory.innerHTML = `
-        <select id="select">
-            <option value='0'>Destaques</option>
-            <option value="1">Acessorios De Casa</option>
-            <option value="2">Acessorios De Tech</option>
-            <option value="3">Moda Masculina e Feminina</option>
-        </select>
-    `
-})
+    // Alterna a visibilidade do menu ao clicar no botão
+    dropdownMenu.style.display = dropdownMenu.style.display === 'none' ? 'block' : 'none';
+});
+
+// Fecha o menu dropdown ao clicar fora dele
+document.addEventListener('click', (event) => {
+    if (!clickcategory.contains(event.target) && !dropdownMenu.contains(event.target)) {
+        dropdownMenu.style.display = 'none';
+    }
+});
+
+

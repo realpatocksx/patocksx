@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="login.css">
+    <title>Login Eletiva Sedu</title>
+</head>
+<body>
+  <!-- Barra Superior -->
+  <header class="top-bar">
+    <div class="logo">
+        <img src="imagem.jpg" alt="Logotipo">
+    </div>
+    <div class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <nav class="nav-links">
+        <div class="user-actions">
+            <button class="register-button">Cadastro</button>
+        </div>
+    </nav>
+  </header>
+
+  <main class="mainbox">
+    <section class="box">
+        <h1>Login</h1>
+        <form action="/" method="post">
+            <label for="username">Usuário:</label>
+            <input type="text" name="username" id="username" placeholder="Digite seu usuário">
+            <label for="password">Senha:</label>
+            <input type="password" name="password" id="password" placeholder="Digite sua senha"> <br>
+            
+            
+            <!-- Botões de login social -->
+
+            <p class="logarformas">Outras Formas de Logar</p>
+            <div class="social-login">
+              <button class="social-btn google-btn">
+                  <img src="imagem.jpg" alt="Google">
+              </button>
+              <button class="social-btn facebook-btn">
+                  <img src="imagem.jpg" alt="Facebook">
+              </button>
+              <button class="social-btn phone-btn">
+                  <img src="imagem.jpg" alt="Celular">
+              </button>
+            </div><br> <br>
+
+            <div class="button-container">
+                <button class="login-btn" type="submit">Entrar</button>
+            </div>
+            <p>Não tem uma conta? <a href="cadastro.html">Cadastre-se aqui</a></p>
+            <p>Esqueceu a senha? <a href="recuperar.html">Recupere aqui</a></p>
+        </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Instagram: @minhalojaph</p>
+    <p>Email: phduck@phloja.com</p>
+    <p>Desenvolvedores: Equipe Red DucksX</p>
+    <p>Lojas Parceiras: Loja A, Loja B</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+  <script src="cart.js"></script>
+  <script src="login.js"></script>
+  <script src="cadastro.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
